@@ -1,0 +1,19 @@
+{
+  "name": "ngblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeataBarbara/ngblog.git"
+  },
+  "author": "BS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BeataBarbara/ngblog/issues"
+  },
+  "homepage": "https://github.com/BeataBarbara/ngblog#readme"
+}
