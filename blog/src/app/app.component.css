@@ -1,0 +1,52 @@
+.nav {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+}
+
+app-navigation {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    height: 10%;
+}
+
+.mid {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 60px;
+    height: 80%;
+    width: 100%;
+}
+
+app-posts {
+    background-color: red;
+    width: 75%;
+    margin: 10px;
+    padding: 0.5em;
+}
+
+app-aside {
+    background-color: blue;
+    width: 25%;
+    margin: 10px;
+    padding: 0.5em;
+}
+
+.foot {
+    display: flex;
+    align-self: end;
+    height: max-content;
+    position: absolute;
+}
+
+app-footer {
+    width: 100%;
+    align-content: flex-end;
+    position: fixed;
+    bottom: -20px;
+    height: 10%;
+    /* position: absolute;
+    bottom: 0px */
+}
