@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.NavigationComponent = void 0;
 var core_1 = require("@angular/core");
+var PostsComponent = new Request('./posts/posts.component');
 var NavigationComponent = /** @class */ (function () {
     function NavigationComponent() {
         this.title = 'Angular blog';

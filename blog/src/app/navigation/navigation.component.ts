@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+const PostsComponent = new Request ('./posts/posts.component');
 
 @Component({
   selector: 'app-navigation',

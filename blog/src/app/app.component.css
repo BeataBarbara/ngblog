@@ -1,7 +1,13 @@
+/* .container {} */
+
 .nav {
     display: flex;
     align-items: center;
     align-content: flex-start;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    position: fixed;
 }
 
 app-navigation {
@@ -16,22 +22,24 @@ app-navigation {
     flex-direction: row;
     position: fixed;
     top: 60px;
-    height: 80%;
     width: 100%;
 }
 
 app-posts {
-    background-color: red;
+    background-color: rgb(117, 218, 209);
+    position: relative;
     width: 75%;
     margin: 10px;
     padding: 0.5em;
 }
 
 app-aside {
-    background-color: blue;
+    background-color: rgb(196, 135, 224);
+    position: relative;
     width: 25%;
-    margin: 10px;
+    min-height: 300px;
     padding: 0.5em;
+    margin: 10px;
 }
 
 .foot {

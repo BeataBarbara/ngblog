@@ -8,6 +8,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { PostsComponent } from './posts/posts.component';
 import { AsideComponent } from './aside/aside.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AsideComponent } from './aside/aside.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ShareModule
+    ShareModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
