@@ -1,18 +1,12 @@
-/* .container {} */
-
-.nav {
+body {
     display: flex;
-    align-items: center;
-    align-content: flex-start;
-    width: 100%;
-    margin: 0 auto;
-    max-width: 1200px;
-    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-app-navigation {
+* app-navigation {
     width: 100%;
-    position: fixed;
+    /* position: fixed; */
     top: 0px;
     height: 10%;
 }
@@ -20,9 +14,12 @@ app-navigation {
 .mid {
     display: flex;
     flex-direction: row;
-    position: fixed;
+    position: absolute;
+    /* position: fixed; */
     top: 60px;
     width: 100%;
+    /* overflow: auto;
+       min-height: 300px; */
 }
 
 app-posts {
@@ -31,6 +28,8 @@ app-posts {
     width: 75%;
     margin: 10px;
     padding: 0.5em;
+    overflow: auto;
+    min-height: 300px;
 }
 
 app-aside {
@@ -42,19 +41,11 @@ app-aside {
     margin: 10px;
 }
 
-.foot {
-    display: flex;
-    align-self: end;
-    height: max-content;
-    position: absolute;
-}
-
 app-footer {
-    width: 100%;
-    align-content: flex-end;
+    background-color: rgb(27, 46, 46);
     position: fixed;
-    bottom: -20px;
-    height: 10%;
-    /* position: absolute;
-    bottom: 0px */
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
+    height: 5%;
 }

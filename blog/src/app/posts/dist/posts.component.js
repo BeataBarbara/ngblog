@@ -14,32 +14,47 @@ var myList = document.querySelector('ul');
 var PostsComponent = /** @class */ (function () {
     function PostsComponent() {
         this.posts = [];
+        this.posts2 = [
+            { id: 1, title: 'title 1', content: 'Lorem  impsum' },
+            { id: 2, title: 'title 2', content: 'Lorem impsum' },
+            { id: 3, title: 'title 3', content: 'Lorem impsum' },
+            { id: 4, title: 'title 4', content: 'Lorem impsum' },
+            { id: 5, title: 'title 5', content: 'Lorem impsum' },
+            { id: 5, title: 'title 5', content: 'Lorem impsum' },
+            { id: 5, title: 'title 5', content: 'Lorem impsum' },
+            { id: 5, title: 'title 5', content: 'Lorem impsum' },
+            { id: 5, title: 'title 5', content: 'Lorem impsum' },
+            { id: 5, title: 'title 5', content: 'Lorem impsum' },
+            { id: 5, title: 'title 5', content: 'Lorem impsum' },
+            { id: 5, title: 'title 5', content: 'Lorem impsum' },
+            { id: 5, title: 'title 5', content: 'Lorem impsum' },
+        ];
         fetch(posts)
             .then(function (resp) { return resp.json(); }) // Transform the data into json
             .then(function (data) {
-            for (var _i = 0, _a = data.title; _i < _a.length; _i++) {
-                var title = _a[_i];
-                var listItem = document.createElement('li');
-                listItem.appendChild(document.createElement('strong')).textContent = title.Name;
-                listItem.append(" can be found in " + title.Location + ". Cost: ");
-                listItem.appendChild(document.createElement('strong')).textContent = "\u00A3" + title.id;
-                myList.appendChild(listItem);
-            }
-        })["catch"](console.error);
+            data.forEach(function (element) {
+                console.log(element.title);
+                document.getElementById('output').innerHTML += "<div> " + element.title + " </div>";
+            });
+        });
+        // .then(data => {
+        //   for (const title of data.title) {
+        //     const listItem = document.createElement('li');
+        //     listItem.appendChild(
+        //       document.createElement('strong')
+        //     ).textContent = title.Name;
+        //     listItem.append(` can be found in ${title.Location}. Cost: `);
+        //     listItem.appendChild(document.createElement('strong')).textContent = `£${title.id}`;
+        //     myList.appendChild(listItem);
+        //   }
+        // })
+        // .catch(console.error);
         // document.getElementById('output').innerHTML += `<div> ${title} </div>`;
         // }
         // // );
         // }
         // );
     }
-    // posts2 = [
-    //   { id: 1, title: 'title 1', content: 'Lorem  impsum' },
-    //   { id: 2, title: 'title 2', content: 'Lorem impsum' },
-    //   { id: 3, title: 'title 3', content: 'Lorem impsum' },
-    //   { id: 4, title: 'title 4', content: 'Lorem impsum' },
-    //   { id: 5, title: 'title 5', content: 'Lorem impsum' }
-    //   // tslint:disable-next-line: no-trailing-whitespace
-    // ];
     PostsComponent.prototype.ngOnInit = function () {
         throw new Error('Method not implemented.');
     };
