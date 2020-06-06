@@ -2,27 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+// import { ROUTING } from './app.routing';
 import { AppComponent } from './app.component';
-import { ShareModule } from './share/share.module';
 import { NavigationComponent } from './navigation/navigation.component';
-import { FooterComponent } from './footer/footer.component';
 import { PostsComponent } from './posts/posts.component';
-import { AsideComponent } from './aside/aside.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    FooterComponent,
     PostsComponent,
-    AsideComponent
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ShareModule,
-    HttpClientModule
+    HttpClientModule,
+    // ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]

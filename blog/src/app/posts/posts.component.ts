@@ -8,7 +8,7 @@ const myList = document.querySelector('ul');
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
-@Injectable()
+
 export class PostsComponent implements OnInit {
 
   constructor() {
@@ -71,5 +71,3 @@ export class PostsComponent implements OnInit {
   //   }
 }
 
-
-// export PostsComponent;
