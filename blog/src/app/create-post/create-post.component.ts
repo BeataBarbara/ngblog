@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CreatePostService } from '../create-post.service';
 
+
+
 @Component({
   selector: 'app-create-post',
   templateUrl: './create-post.component.html',
@@ -11,14 +13,15 @@ export class CreatePostComponent implements OnInit {
 
   createPost: FormGroup;
 
-  showErrors = false;
+  // tslint:disable-next-line: no-inferrable-types
+  showErrors: boolean = false;
 
   constructor(public formBuilder: FormBuilder, public createpostservice: CreatePostService) { }
 
   ngOnInit() {
     this.createPost = this.formBuilder.group({
-      title: ['', Validators.minLength(5)],
-      text: ['', Validators.minLength(100)]
+      title: ['', Validators.minLength(5) ],
+      text: ['', Validators.minLength(100) ]
     });
   }
 
@@ -32,7 +35,7 @@ export class CreatePostComponent implements OnInit {
         .catch(failure => console.error(failure));
     } else {
         this.showErrors = true;
-        console.log('Formularz zawiera błędy.');
+        console.log('Nie można zapisać postu. Sprawdź komunikaty o błędach.');
     }
 }
 }

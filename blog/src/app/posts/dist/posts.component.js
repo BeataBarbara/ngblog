@@ -6,17 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.OopsComponent = void 0;
+exports.PostsComponent = void 0;
 var core_1 = require("@angular/core");
-var OopsComponent = /** @class */ (function () {
-    function OopsComponent() {
+var PostsComponent = /** @class */ (function () {
+    function PostsComponent() {
     }
-    OopsComponent = __decorate([
+    PostsComponent = __decorate([
         core_1.Component({
-            selector: 'app-oops',
-            templateUrl: './oops.component.html'
+            selector: 'app-posts',
+            templateUrl: './posts.component.html',
+            styleUrls: ['./posts.component.css']
         })
-    ], OopsComponent);
-    return OopsComponent;
+    ], PostsComponent);
+    return PostsComponent;
 }());
-exports.OopsComponent = OopsComponent;
+exports.PostsComponent = PostsComponent;

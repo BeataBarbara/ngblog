@@ -21,6 +21,9 @@ var oops_component_1 = require("./oops/oops.component");
 var post_detail_component_1 = require("./post-detail/post-detail.component");
 var posts_list_component_1 = require("./posts-list/posts-list.component");
 var posts_component_1 = require("./posts/posts.component");
+var aside_component_1 = require("./aside/aside.component");
+var home_component_1 = require("./home/home.component");
+var post_item_component_1 = require("./post-item/post-item.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -33,7 +36,10 @@ var AppModule = /** @class */ (function () {
                 create_post_component_1.CreatePostComponent,
                 oops_component_1.OopsComponent,
                 posts_list_component_1.PostsListComponent,
-                post_detail_component_1.PostDetailComponent
+                post_detail_component_1.PostDetailComponent,
+                aside_component_1.AsideComponent,
+                home_component_1.HomeComponent,
+                post_item_component_1.PostItemComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -41,6 +47,7 @@ var AppModule = /** @class */ (function () {
                 forms_1.FormsModule,
                 http_1.HttpClientModule,
                 router_1.RouterModule.forRoot(app_routes_1.appRoutes),
+                forms_1.ReactiveFormsModule
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]

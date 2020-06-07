@@ -7,8 +7,8 @@ import { HomeComponent } from './home/home.component';
 
 export const appRoutes: Route[] = [
     { path: '', component: HomeComponent },
-    { path: 'create-post', component: CreatePostComponent },
-    { path: 'posts-list', component: PostsListComponent },
-    { path: 'app-posts-list/:id', component: PostDetailComponent },
+    { path: 'create', component: CreatePostComponent },
+    { path: 'list', component: PostsListComponent },
+    { path: 'list/:id', component: PostDetailComponent },
     { path: '**', component: OopsComponent }
 ];

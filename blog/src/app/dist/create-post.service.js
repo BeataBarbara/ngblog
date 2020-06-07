@@ -12,10 +12,19 @@ var CreatePostService = /** @class */ (function () {
     function CreatePostService(http) {
         this.http = http;
         // tslint:disable-next-line: no-inferrable-types
-        this.url = 'http://localhost:3000/sandwiches';
+        this.url = 'http://localhost:3000/posts';
     }
     CreatePostService.prototype.createPost = function (mypost) {
         return this.http.post(this.url, mypost).toPromise();
+    };
+    CreatePostService.prototype.fetchPosts = function (query) {
+        return this.http.get(this.url + "/" + query).toPromise();
+    };
+    CreatePostService.prototype.fetchPost = function (postId) {
+        return this.http.get(this.url + "/" + postId).toPromise();
+    };
+    CreatePostService.prototype.deletePost = function (postId) {
+        return this.http["delete"](this.url + "/" + postId).toPromise();
     };
     CreatePostService = __decorate([
         core_1.Injectable()

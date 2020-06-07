@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CreatePostService } from '../create-post.service';
 
 @Component({
   selector: 'app-posts-list',
@@ -6,10 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts-list.component.css']
 })
 export class PostsListComponent implements OnInit {
+  myPosts;
 
-  constructor() { }
+  // tslint:disable-next-line: no-inferrable-types
+  query: string = '';
 
-  ngOnInit(): void {
+
+  constructor(public createPostService: CreatePostService) { }
+
+  ngOnInit() {
+    this.updatePosts();
   }
 
+  onDelete(postId) {
+    this.createPostService.deletePost(postId)
+    .then(() => {
+      this.updatePosts();
+    });
+  }
+
+  search(query) {
+    this.query = query;
+  }
+
+  updatePosts() {
+    this.myPosts = this.createPostService.fetchPosts(this.query);
+  }
 }

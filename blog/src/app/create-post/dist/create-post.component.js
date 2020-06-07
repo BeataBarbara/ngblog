@@ -13,6 +13,7 @@ var CreatePostComponent = /** @class */ (function () {
     function CreatePostComponent(formBuilder, createpostservice) {
         this.formBuilder = formBuilder;
         this.createpostservice = createpostservice;
+        // tslint:disable-next-line: no-inferrable-types
         this.showErrors = false;
     }
     CreatePostComponent.prototype.ngOnInit = function () {
@@ -31,7 +32,7 @@ var CreatePostComponent = /** @class */ (function () {
         }
         else {
             this.showErrors = true;
-            console.log('Formularz zawiera błędy.');
+            console.log('Nie można zapisać postu. Sprawdź komunikaty o błędach.');
         }
     };
     CreatePostComponent = __decorate([

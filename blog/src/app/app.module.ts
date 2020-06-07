@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { PostsListComponent } from './posts-list/posts-list.component';
 import { PostsComponent } from './posts/posts.component';
 import { AsideComponent } from './aside/aside.component';
 import { HomeComponent } from './home/home.component';
+import { PostItemComponent } from './post-item/post-item.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HomeComponent } from './home/home.component';
     PostsListComponent,
     PostDetailComponent,
     AsideComponent,
-    HomeComponent
+    HomeComponent,
+    PostItemComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+      ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@
     "name": "blog",
     "version": "0.0.0",
     "scripts": {
-        "db": "json-server --watch sandwiches.json",
+        "db": "json-server --watch database.json",
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
