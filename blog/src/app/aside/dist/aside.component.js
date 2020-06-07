@@ -6,21 +6,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.NavigationComponent = void 0;
+exports.AsideComponent = void 0;
 var core_1 = require("@angular/core");
-var PostsComponent = new Request('./posts/posts.component');
-var NavigationComponent = /** @class */ (function () {
-    function NavigationComponent() {
-        this.title = 'Angular blog';
+var AsideComponent = /** @class */ (function () {
+    function AsideComponent() {
     }
-    NavigationComponent.prototype.ngOnInit = function () {
+    AsideComponent.prototype.ngOnInit = function () {
     };
-    NavigationComponent = __decorate([
+    AsideComponent = __decorate([
         core_1.Component({
-            selector: 'app-navigation',
-            templateUrl: './navigation.component.html'
+            selector: 'app-aside',
+            templateUrl: './aside.component.html'
         })
-    ], NavigationComponent);
-    return NavigationComponent;
+    ], AsideComponent);
+    return AsideComponent;
 }());
-exports.NavigationComponent = NavigationComponent;
+exports.AsideComponent = AsideComponent;

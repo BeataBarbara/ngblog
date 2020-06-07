@@ -6,21 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.NavigationComponent = void 0;
+exports.OopsComponent = void 0;
 var core_1 = require("@angular/core");
-var PostsComponent = new Request('./posts/posts.component');
-var NavigationComponent = /** @class */ (function () {
-    function NavigationComponent() {
-        this.title = 'Angular blog';
+var OopsComponent = /** @class */ (function () {
+    function OopsComponent() {
     }
-    NavigationComponent.prototype.ngOnInit = function () {
-    };
-    NavigationComponent = __decorate([
+    OopsComponent = __decorate([
         core_1.Component({
-            selector: 'app-navigation',
-            templateUrl: './navigation.component.html'
+            selector: 'app-oops',
+            templateUrl: './oops.component.html'
         })
-    ], NavigationComponent);
-    return NavigationComponent;
+    ], OopsComponent);
+    return OopsComponent;
 }());
-exports.NavigationComponent = NavigationComponent;
+exports.OopsComponent = OopsComponent;

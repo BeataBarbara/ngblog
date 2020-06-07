@@ -8,9 +8,10 @@ import { CreatePostService } from '../create-post.service';
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent implements OnInit {
+
   createPost: FormGroup;
 
-  showErrors: boolean = false;
+  showErrors = false;
 
   constructor(public formBuilder: FormBuilder, public createpostservice: CreatePostService) { }
 
@@ -20,13 +21,15 @@ export class CreatePostComponent implements OnInit {
       text: ['', Validators.minLength(100)]
     });
   }
+
   save() {
     if (this.createPost.valid) {
         const formValue = this.createPost.getRawValue();
         // zapisujemy post do serwera
         this.createpostservice.createPost(formValue)
-            .then(success => console.info(success))
-            .catch(failure => console.error(failure));
+        // tslint:disable-next-line: no-console
+        .then(success => console.info(success))
+        .catch(failure => console.error(failure));
     } else {
         this.showErrors = true;
         console.log('Formularz zawiera błędy.');

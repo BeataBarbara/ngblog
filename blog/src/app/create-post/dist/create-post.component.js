@@ -26,6 +26,7 @@ var CreatePostComponent = /** @class */ (function () {
             var formValue = this.createPost.getRawValue();
             // zapisujemy post do serwera
             this.createpostservice.createPost(formValue)
+                // tslint:disable-next-line: no-console
                 .then(function (success) { return console.info(success); })["catch"](function (failure) { return console.error(failure); });
         }
         else {
