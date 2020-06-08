@@ -1,0 +1,21 @@
+section,
+input,
+textarea,
+h2 {
+    text-align: center;
+    border-radius: 5px;
+}
+
+h2,
+label {
+    color: antiquewhite;
+}
+
+input {
+    width: 200px;
+}
+
+textarea {
+    min-height: 300px;
+    width: 800px;
+}

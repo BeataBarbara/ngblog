@@ -1,21 +1,25 @@
 <h2>Dodaj post</h2>
 <form [formGroup]="createPost" novalidate>
     <section>
-        <label>
-            Tytuł: <br>
-            <input type="text" formControlName="title">
-            <p *ngIf="showErrors && createPost.get('title').errors?.minlength" style="color:red;font-weight:bold;">
+
+        <div class="control"> <label>
+            Tytuł:  
+                <input class="input is-primary" type="text" placeholder="Plese type title" formControlName="title">
+             
+            <!-- <p *ngIf="showErrors && createPost.get('title').errors?.minlength" style="color:red;font-weight:bold;">
                 Tytuł musi mieć conajmniej 5 znaków.
-            </p>
-        </label>
+            </p> -->
+        </label> </div>
     </section>
     <section>
         <label>
             Treść: <br>
-            <input type="text" formControlName="text">
-            <p *ngIf="showErrors && createPost.get('text').errors?.minlength" style="color:red;font-weight:bold;">
+            <div class="control">
+                <textarea class="textarea is-primary is-medium" placeholder="Type the conten of your post here" formControlName="text"></textarea>
+              </div>
+            <!-- <p *ngIf="showErrors && createPost.get('text').errors?.minlength" style="color:red;font-weight:bold;">
                 Zawartość powinna mieć minimum 100 znaków.
-            </p>
+            </p> -->
         </label>
     </section>
     <button type="button" (click)="save()">Save</button>

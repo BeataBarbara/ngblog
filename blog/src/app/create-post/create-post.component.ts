@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CreatePostService } from '../create-post.service';
 
-
-
 @Component({
   selector: 'app-create-post',
   templateUrl: './create-post.component.html',

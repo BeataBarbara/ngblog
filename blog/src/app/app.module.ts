@@ -36,7 +36,7 @@ import { PostItemComponent } from './post-item/post-item.component';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-      ReactiveFormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
