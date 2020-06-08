@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.AppModule = void 0;
+var create_post_service_1 = require("./create-post.service");
 var common_1 = require("@angular/common");
 var http_1 = require("@angular/common/http");
 var core_1 = require("@angular/core");
@@ -21,7 +22,7 @@ var oops_component_1 = require("./oops/oops.component");
 var post_detail_component_1 = require("./post-detail/post-detail.component");
 var posts_list_component_1 = require("./posts-list/posts-list.component");
 var posts_component_1 = require("./posts/posts.component");
-var aside_component_1 = require("./aside/aside.component");
+var aside_component_1 = require("../aside/aside.component");
 var home_component_1 = require("./home/home.component");
 var post_item_component_1 = require("./post-item/post-item.component");
 var AppModule = /** @class */ (function () {
@@ -49,7 +50,7 @@ var AppModule = /** @class */ (function () {
                 router_1.RouterModule.forRoot(app_routes_1.appRoutes),
                 forms_1.ReactiveFormsModule
             ],
-            providers: [],
+            providers: [create_post_service_1.CreatePostService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
