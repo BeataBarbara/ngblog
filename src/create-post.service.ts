@@ -9,18 +9,22 @@ export class CreatePostService {
   url: string = 'http://localhost:3000/posts';
   constructor(public http: HttpClient) { }
 
-  createPost(mypost: MyPost) {
-    return this.http.post(this.url, mypost).toPromise();
+  createPost(myPost: MyPost) {
+    // zapisywanie pojedyńczego postu
+    return this.http.post(this.url, myPost).toPromise();
   }
 
   fetchPosts(query: string) {
-    return this.http.get(`${this.url}/${query}`).toPromise();
+    // do searcha
+    return this.http.get(`${this.url}?q=${query}`).toPromise();
   }
 
-  fetchPost(postId) {
-    return this.http.get(`${this.url}/${postId}`).toPromise();
+  fetchPost(myPostId) {
+// pokazuje pojedyńczy post
+    return this.http.get(`${this.url}/${myPostId}`).toPromise();
   }
-  deletePost(postId) {
-    return this.http.delete(`${this.url}/${postId}`).toPromise();
+  deletePost(myPostId) {
+    // usauwa pojedyńczy post
+    return this.http.delete(`${this.url}/${myPostId}`).toPromise();
   }
 }

@@ -9,8 +9,24 @@ exports.__esModule = true;
 exports.PostsComponent = void 0;
 var core_1 = require("@angular/core");
 var PostsComponent = /** @class */ (function () {
-    function PostsComponent() {
+    function PostsComponent(createPostService) {
+        this.createPostService = createPostService;
+        // tslint:disable-next-line: no-inferrable-types
+        this.query = '';
     }
+    PostsComponent.prototype.ngOnInit = function () {
+        this.updateList();
+    };
+    PostsComponent.prototype.onDelete = function (myPostId) {
+        var _this = this;
+        this.createPostService.deletePost(myPostId)
+            .then(function () {
+            _this.updateList();
+        });
+    };
+    PostsComponent.prototype.updateList = function () {
+        this.myPosts = this.createPostService.fetchPosts(this.query);
+    };
     PostsComponent = __decorate([
         core_1.Component({
             selector: 'app-posts',

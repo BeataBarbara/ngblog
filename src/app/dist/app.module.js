@@ -11,6 +11,7 @@ var common_1 = require("@angular/common");
 var http_1 = require("@angular/common/http");
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
+var forms_2 = require("@angular/forms");
 var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
@@ -48,7 +49,7 @@ var AppModule = /** @class */ (function () {
                 forms_1.FormsModule,
                 http_1.HttpClientModule,
                 router_1.RouterModule.forRoot(app_routes_1.appRoutes),
-                forms_1.ReactiveFormsModule
+                forms_2.ReactiveFormsModule
             ],
             providers: [create_post_service_1.CreatePostService],
             bootstrap: [app_component_1.AppComponent]

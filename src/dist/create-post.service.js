@@ -14,17 +14,21 @@ var CreatePostService = /** @class */ (function () {
         // tslint:disable-next-line: no-inferrable-types
         this.url = 'http://localhost:3000/posts';
     }
-    CreatePostService.prototype.createPost = function (mypost) {
-        return this.http.post(this.url, mypost).toPromise();
+    CreatePostService.prototype.createPost = function (myPost) {
+        // zapisywanie pojedyńczego postu
+        return this.http.post(this.url, myPost).toPromise();
     };
     CreatePostService.prototype.fetchPosts = function (query) {
-        return this.http.get(this.url + "/" + query).toPromise();
+        // do searcha
+        return this.http.get(this.url + "?q=" + query).toPromise();
     };
-    CreatePostService.prototype.fetchPost = function (postId) {
-        return this.http.get(this.url + "/" + postId).toPromise();
+    CreatePostService.prototype.fetchPost = function (myPostId) {
+        // pokazuje pojedyńczy post
+        return this.http.get(this.url + "/" + myPostId).toPromise();
     };
-    CreatePostService.prototype.deletePost = function (postId) {
-        return this.http["delete"](this.url + "/" + postId).toPromise();
+    CreatePostService.prototype.deletePost = function (myPostId) {
+        // usauwa pojedyńczy post
+        return this.http["delete"](this.url + "/" + myPostId).toPromise();
     };
     CreatePostService = __decorate([
         core_1.Injectable()

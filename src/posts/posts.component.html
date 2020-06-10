@@ -1,1 +1,5 @@
 <h1>Posty na blogu</h1>
+<div *ngFor="let myPost of myPosts">
+    <h4><a routerLink="/list/{{myPost.id}}">{{ myPost.title }}</a></h4>
+    <app-posts-list *ngFor="let myPost of myPosts | async" [myPost]="myPost" (delete)="onDelete($event)"> </app-posts-list>
+</div>
