@@ -12,6 +12,8 @@ import { CreatePostService } from '../create-post.service';
 export class CreatePostComponent implements OnInit {
 
   createPost: FormGroup;
+  // tslint:disable-next-line: no-inferrable-types
+  postIsReady: boolean = false;
 
   // tslint:disable-next-line: no-inferrable-types
   showErrors: boolean = false;
@@ -33,6 +35,7 @@ export class CreatePostComponent implements OnInit {
         // tslint:disable-next-line: no-console
         .then(success => console.info(success))
         .catch(failure => console.error(failure));
+        this.postIsReady = true;
     } else {
         this.showErrors = true;
         console.log('Nie można zapisać postu. Sprawdź komunikaty o błędach.');

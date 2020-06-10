@@ -9,9 +9,24 @@ exports.__esModule = true;
 exports.PostDetailComponent = void 0;
 var core_1 = require("@angular/core");
 var PostDetailComponent = /** @class */ (function () {
-    function PostDetailComponent() {
+    function PostDetailComponent(createPostService, activatedRoute) {
+        this.createPostService = createPostService;
+        this.activatedRoute = activatedRoute;
+        this.myPost = {
+            title: 'brak',
+            text: 'brak'
+        };
     }
     PostDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var myPostId = this.activatedRoute.snapshot.params.id;
+        this.createPostService.fetchPost(myPostId)
+            .then(function (myPost) {
+            console.log(myPost);
+            _this.myPost = myPost;
+        })["catch"](function (error) {
+            console.log(error);
+        });
     };
     PostDetailComponent = __decorate([
         core_1.Component({

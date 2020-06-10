@@ -15,17 +15,22 @@ var PostsComponent = /** @class */ (function () {
         this.query = '';
     }
     PostsComponent.prototype.ngOnInit = function () {
-        this.updateList();
+        console.log('myPosts');
+        this.updatePosts();
     };
     PostsComponent.prototype.onDelete = function (myPostId) {
         var _this = this;
         this.createPostService.deletePost(myPostId)
             .then(function () {
-            _this.updateList();
+            _this.updatePosts();
         });
     };
-    PostsComponent.prototype.updateList = function () {
+    PostsComponent.prototype.search = function (query) {
+        this.query = query;
+    };
+    PostsComponent.prototype.updatePosts = function () {
         this.myPosts = this.createPostService.fetchPosts(this.query);
+        console.log('myPostsxx');
     };
     PostsComponent = __decorate([
         core_1.Component({

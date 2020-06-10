@@ -24,3 +24,10 @@
     </section>
     <button type="button" (click)="save()">Save</button>
 </form>
+
+<p *ngIf="postIsReady" style="color:antiquewhite">
+    Post został dodany
+</p>
+<!-- <ng-container *ngIf="postIfReady = true">
+    Post został dodany
+</ng-container> -->

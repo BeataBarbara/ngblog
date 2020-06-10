@@ -1,7 +1,0 @@
-<h2 style="color: antiquewhite; text-align: center">List of posts</h2>
-
-<section>
-    <ul>
-        <app-post-item *ngFor="let myPost of myPosts | async" [myPost]="myPost" (delete)="onDelete($event)"> </app-post-item>
-    </ul>
-</section>

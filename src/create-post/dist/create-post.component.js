@@ -14,6 +14,8 @@ var CreatePostComponent = /** @class */ (function () {
         this.formBuilder = formBuilder;
         this.createpostservice = createpostservice;
         // tslint:disable-next-line: no-inferrable-types
+        this.postIsReady = false;
+        // tslint:disable-next-line: no-inferrable-types
         this.showErrors = false;
     }
     CreatePostComponent.prototype.ngOnInit = function () {
@@ -29,6 +31,7 @@ var CreatePostComponent = /** @class */ (function () {
             this.createpostservice.createPost(formValue)
                 // tslint:disable-next-line: no-console
                 .then(function (success) { return console.info(success); })["catch"](function (failure) { return console.error(failure); });
+            this.postIsReady = true;
         }
         else {
             this.showErrors = true;

@@ -1,4 +1,8 @@
-<div>
-    <h4><a routerLink="/list/{{myPost.id}}">{{ myPost.title }}</a></h4>
-    <button type="button" (click)="onClick()">Delete</button>
-</div>
+<h2 style="color: antiquewhite; text-align: center">List of posts</h2>
+
+<section>
+    <ul>
+        <app-post-item *ngFor="let myPost of myPosts | async" [myPost]="myPost" (delete)="onDelete($event)"> </app-post-item>
+    </ul>
+
+</section>

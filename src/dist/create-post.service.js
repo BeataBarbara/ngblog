@@ -12,7 +12,7 @@ var CreatePostService = /** @class */ (function () {
     function CreatePostService(http) {
         this.http = http;
         // tslint:disable-next-line: no-inferrable-types
-        this.url = 'http://localhost:3000/posts';
+        this.url = 'http://localhost:3000/myposts';
     }
     CreatePostService.prototype.createPost = function (myPost) {
         // zapisywanie pojedyńczego postu

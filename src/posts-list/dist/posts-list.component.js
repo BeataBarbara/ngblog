@@ -9,18 +9,27 @@ exports.__esModule = true;
 exports.PostsListComponent = void 0;
 var core_1 = require("@angular/core");
 var PostsListComponent = /** @class */ (function () {
-    function PostsListComponent() {
-        this["delete"] = new core_1.EventEmitter();
+    function PostsListComponent(createPostService) {
+        this.createPostService = createPostService;
+        // tslint:disable-next-line: no-inferrable-types
+        this.query = '';
     }
-    PostsListComponent.prototype.onClick = function () {
-        this["delete"].emit(this.myPost.id);
+    PostsListComponent.prototype.ngOnInit = function () {
+        this.updatePosts();
     };
-    __decorate([
-        core_1.Input()
-    ], PostsListComponent.prototype, "myPost");
-    __decorate([
-        core_1.Output()
-    ], PostsListComponent.prototype, "delete");
+    PostsListComponent.prototype.onDelete = function (myPostId) {
+        var _this = this;
+        this.createPostService.deletePost(myPostId)
+            .then(function () {
+            _this.updatePosts();
+        });
+    };
+    PostsListComponent.prototype.search = function (query) {
+        this.query = query;
+    };
+    PostsListComponent.prototype.updatePosts = function () {
+        this.myPosts = this.createPostService.fetchPosts(this.query);
+    };
     PostsListComponent = __decorate([
         core_1.Component({
             selector: 'app-posts-list',

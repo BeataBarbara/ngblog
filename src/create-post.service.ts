@@ -6,7 +6,7 @@ import { MyPost } from './myPost';
 @Injectable()
 export class CreatePostService {
   // tslint:disable-next-line: no-inferrable-types
-  url: string = 'http://localhost:3000/posts';
+  url: string = 'http://localhost:3000/myposts';
   constructor(public http: HttpClient) { }
 
   createPost(myPost: MyPost) {
