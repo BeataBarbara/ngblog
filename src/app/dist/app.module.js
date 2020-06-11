@@ -21,8 +21,6 @@ var oops_component_1 = require("../oops/oops.component");
 var post_detail_component_1 = require("../post-detail/post-detail.component");
 var posts_list_component_1 = require("../posts-list/posts-list.component");
 var posts_component_1 = require("../posts/posts.component");
-var aside_component_1 = require("../aside/aside.component");
-var home_component_1 = require("../home/home.component");
 var post_item_component_1 = require("../post-item/post-item.component");
 var create_post_service_1 = require("src/create-post.service");
 var post_title_component_1 = require("../post-title/post-title.component");
@@ -39,8 +37,6 @@ var AppModule = /** @class */ (function () {
                 oops_component_1.OopsComponent,
                 posts_list_component_1.PostsListComponent,
                 post_detail_component_1.PostDetailComponent,
-                aside_component_1.AsideComponent,
-                home_component_1.HomeComponent,
                 post_item_component_1.PostItemComponent,
                 post_title_component_1.PostTitleComponent
             ],

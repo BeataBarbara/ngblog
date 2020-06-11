@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    padding: 1em;
+    top: 60px;
+    width: 100%;
+}
+
+app-posts {
+    background-color: rgb(117, 218, 209);
+    position: relative;
+    width: 75%;
+    margin: 10px;
+    padding: 1em;
+    overflow: auto;
+    min-height: 300px;
+    border-radius: 15px;
+}
+
+app-aside {
+    background-color: rgb(196, 135, 224);
+    position: relative;
+    width: 25%;
+    min-height: 300px;
+    padding: 1em;
+    margin: 10px;
+    border-radius: 15px;
+}

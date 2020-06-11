@@ -4,7 +4,7 @@
 
         <div class="control "> <label>
             Tytuł:  
-                <input class="input is-info " type="text " placeholder="Plese type title " formControlName="title " style="width: 600px; ">
+                <input class="input is-info " type="text " placeholder="Plese type title " formControlName="title" style="width: 600px; ">
              
             <p *ngIf="showErrors && createPost.get( 'title').errors?.minlength " style="color:rgb(201, 42, 42);font-weight:bold; ">
                 Tytuł musi mieć conajmniej 5 znaków.
@@ -15,7 +15,7 @@
         <label>
             Treść: <br>
             <div class="control ">
-                <textarea class="textarea is-primary is-medium " placeholder="Type the conten of your post here " formControlName="text " style="width: 700px; min-height:400px "></textarea>
+                <textarea class="textarea is-primary is-medium " placeholder="Type the conten of your post here " formControlName="text" style="width: 700px; min-height:400px "></textarea>
               </div>
             <p *ngIf="showErrors && createPost.get( 'text').errors?.minlength " style="color:rgb(201, 42, 42);font-weight:bold; ">
                 Zawartość powinna mieć minimum 100 znaków.

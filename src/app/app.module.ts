@@ -12,8 +12,6 @@ import { OopsComponent } from '../oops/oops.component';
 import { PostDetailComponent } from '../post-detail/post-detail.component';
 import { PostsListComponent } from '../posts-list/posts-list.component';
 import { PostsComponent } from '../posts/posts.component';
-import { AsideComponent } from '../aside/aside.component';
-import { HomeComponent } from '../home/home.component';
 import { PostItemComponent } from '../post-item/post-item.component';
 import { CreatePostService } from 'src/create-post.service';
 import { PostTitleComponent } from '../post-title/post-title.component';
@@ -27,8 +25,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     OopsComponent,
     PostsListComponent,
     PostDetailComponent,
-    AsideComponent,
-    HomeComponent,
     PostItemComponent,
     PostTitleComponent
   ],

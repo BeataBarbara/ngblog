@@ -21,24 +21,24 @@ export class CreatePostComponent implements OnInit {
   ngOnInit() {
     this.updatePosts();
     this.createPost = this.formBuilder.group({
-      title: ['', Validators.minLength(5) ],
-      text: ['', Validators.minLength(100) ]
+      title: ['', Validators.minLength(5)],
+      text: ['', Validators.minLength(100)]
     });
   }
 
   save() {
     if (this.createPost.valid) {
-        const formValue = this.createPost.getRawValue();
-        this.createpostservice.createPost(formValue)
+      const formValue = this.createPost.getRawValue();
+      this.createpostservice.createPost(formValue)
         .then(success => console.info(success))
         .catch(failure => console.error(failure));
-        this.postIsReady = true;
+      this.postIsReady = true;
     } else {
-        this.showErrors = true;
-        console.log('Nie można zapisać postu. Sprawdź komunikaty o błędach.');
+      this.showErrors = true;
+      console.log('Nie można zapisać postu. Sprawdź komunikaty o błędach.');
     }
-}
-updatePosts() {
-  this.myPosts = this.createpostservice.fetchPosts(this.query);
- }
+  }
+  updatePosts() {
+    this.myPosts = this.createpostservice.fetchPosts(this.query);
+  }
 }

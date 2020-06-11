@@ -1,7 +1,20 @@
-<h1>Posty na blogu</h1>
-<section>
-    <app-post-detail *ngFor="let myPost of myPosts | async" [myPost]="myPost">
-        <h4><a routerLink="/list/{{myPost.id}}">{{ myPost.title }} </a></h4>
-    </app-post-detail>
-</section>
->
+<nav class="container">
+    <div class="posts">
+        <h1>
+            Posty na blogu</h1>
+        <section>
+            <app-post-detail *ngFor="let myPost of myPosts | async" [myPost]="myPost">
+                <h4><a routerLink="/list/{{myPost.id}}">{{ myPost.title }} </a></h4>
+            </app-post-detail>
+        </section>
+    </div>
+    <div class="aside">
+        <h1>Oto mój blog</h1>
+        <p><strong>Opublikowano już na nim xxx postów.</strong></p>
+        <hr>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores excepturi blanditiis porro possimus molestias facilis? Sequi maxime, culpa fugit nobis nisi quo necessitatibus rerum fuga error ipsa reprehenderit itaque laboriosam tempora qui nihil
+            quasi quia adipisci. Voluptatem sint explicabo qui. </p>
+        <hr>
+    </div>
+
+</nav>
