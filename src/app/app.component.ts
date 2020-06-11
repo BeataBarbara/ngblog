@@ -1,3 +1,4 @@
+import { CreatePostService } from 'src/create-post.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'blog';
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CreatePostService } from 'src/create-post.service';
 import { MyPost } from '../myPost';
@@ -9,10 +9,8 @@ import { MyPost } from '../myPost';
   styleUrls: ['./post-detail.component.css']
 })
 export class PostDetailComponent implements OnInit {
-  myPost: MyPost = {
-    title: 'brak',
-    text: 'brak'
-  };
+  @Input() myPost: MyPost;
+  @Output() delete = new EventEmitter();
 
   constructor(public createPostService: CreatePostService, public activatedRoute: ActivatedRoute) { }
 

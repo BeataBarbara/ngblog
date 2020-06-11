@@ -13,12 +13,12 @@ var CreatePostComponent = /** @class */ (function () {
     function CreatePostComponent(formBuilder, createpostservice) {
         this.formBuilder = formBuilder;
         this.createpostservice = createpostservice;
-        // tslint:disable-next-line: no-inferrable-types
+        this.query = '';
         this.postIsReady = false;
-        // tslint:disable-next-line: no-inferrable-types
         this.showErrors = false;
     }
     CreatePostComponent.prototype.ngOnInit = function () {
+        this.updatePosts();
         this.createPost = this.formBuilder.group({
             title: ['', forms_1.Validators.minLength(5)],
             text: ['', forms_1.Validators.minLength(100)]
@@ -27,9 +27,7 @@ var CreatePostComponent = /** @class */ (function () {
     CreatePostComponent.prototype.save = function () {
         if (this.createPost.valid) {
             var formValue = this.createPost.getRawValue();
-            // zapisujemy post do serwera
             this.createpostservice.createPost(formValue)
-                // tslint:disable-next-line: no-console
                 .then(function (success) { return console.info(success); })["catch"](function (failure) { return console.error(failure); });
             this.postIsReady = true;
         }
@@ -37,6 +35,9 @@ var CreatePostComponent = /** @class */ (function () {
             this.showErrors = true;
             console.log('Nie można zapisać postu. Sprawdź komunikaty o błędach.');
         }
+    };
+    CreatePostComponent.prototype.updatePosts = function () {
+        this.myPosts = this.createpostservice.fetchPosts(this.query);
     };
     CreatePostComponent = __decorate([
         core_1.Component({

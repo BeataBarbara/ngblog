@@ -10,17 +10,16 @@ import { CreatePostService } from '../create-post.service';
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent implements OnInit {
-
+  myPosts;
+  query: string = '';
   createPost: FormGroup;
-  // tslint:disable-next-line: no-inferrable-types
   postIsReady: boolean = false;
-
-  // tslint:disable-next-line: no-inferrable-types
   showErrors: boolean = false;
 
   constructor(public formBuilder: FormBuilder, public createpostservice: CreatePostService) { }
 
   ngOnInit() {
+    this.updatePosts();
     this.createPost = this.formBuilder.group({
       title: ['', Validators.minLength(5) ],
       text: ['', Validators.minLength(100) ]
@@ -30,9 +29,7 @@ export class CreatePostComponent implements OnInit {
   save() {
     if (this.createPost.valid) {
         const formValue = this.createPost.getRawValue();
-        // zapisujemy post do serwera
         this.createpostservice.createPost(formValue)
-        // tslint:disable-next-line: no-console
         .then(success => console.info(success))
         .catch(failure => console.error(failure));
         this.postIsReady = true;
@@ -41,4 +38,7 @@ export class CreatePostComponent implements OnInit {
         console.log('Nie można zapisać postu. Sprawdź komunikaty o błędach.');
     }
 }
+updatePosts() {
+  this.myPosts = this.createpostservice.fetchPosts(this.query);
+ }
 }

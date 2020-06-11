@@ -8,7 +8,6 @@ import { CreatePostService } from '../create-post.service';
 })
 export class PostsListComponent implements OnInit {
   myPosts;
-
   // tslint:disable-next-line: no-inferrable-types
   query: string = '';
 
@@ -24,11 +23,10 @@ export class PostsListComponent implements OnInit {
       this.updatePosts();
     });
   }
-
   search(query) {
     this.query = query;
+    this.myPosts = this.createPostService.fetchPosts(this.query);
   }
-
   updatePosts() {
    this.myPosts = this.createPostService.fetchPosts(this.query);
   }

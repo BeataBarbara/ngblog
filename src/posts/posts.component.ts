@@ -11,31 +11,15 @@ import { Component,  OnInit } from '@angular/core';
 export class PostsComponent implements OnInit {
   myPosts;
 
-  // tslint:disable-next-line: no-inferrable-types
-  query: string = '';
+ query: string = '';
 
-  constructor(public createPostService: CreatePostService) { }
+  constructor(public createPostService: CreatePostService) {   }
 
   ngOnInit() {
-    console.log('myPosts')
     this.updatePosts();
-  }
-
-  onDelete(myPostId) {
-    this.createPostService.deletePost(myPostId)
-    .then(() => {
-      this.updatePosts();
-    });
-  }
-
-  search(query) {
-    this.query = query;
   }
 
   updatePosts() {
    this.myPosts = this.createPostService.fetchPosts(this.query);
-   console.log('myPostsxx')
   }
 }
-
-

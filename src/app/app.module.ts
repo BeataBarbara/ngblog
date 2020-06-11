@@ -8,7 +8,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { CreatePostComponent } from '../create-post/create-post.component';
-import { NavigationComponent } from '../navigation/navigation.component';
 import { OopsComponent } from '../oops/oops.component';
 import { PostDetailComponent } from '../post-detail/post-detail.component';
 import { PostsListComponent } from '../posts-list/posts-list.component';
@@ -17,12 +16,12 @@ import { AsideComponent } from '../aside/aside.component';
 import { HomeComponent } from '../home/home.component';
 import { PostItemComponent } from '../post-item/post-item.component';
 import { CreatePostService } from 'src/create-post.service';
-
+import { PostTitleComponent } from '../post-title/post-title.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
     PostsComponent,
     CreatePostComponent,
     OopsComponent,
@@ -30,7 +29,8 @@ import { CreatePostService } from 'src/create-post.service';
     PostDetailComponent,
     AsideComponent,
     HomeComponent,
-    PostItemComponent
+    PostItemComponent,
+    PostTitleComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +38,8 @@ import { CreatePostService } from 'src/create-post.service';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [CreatePostService],
   bootstrap: [AppComponent]

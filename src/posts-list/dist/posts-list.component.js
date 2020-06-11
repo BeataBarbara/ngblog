@@ -26,6 +26,7 @@ var PostsListComponent = /** @class */ (function () {
     };
     PostsListComponent.prototype.search = function (query) {
         this.query = query;
+        this.myPosts = this.createPostService.fetchPosts(this.query);
     };
     PostsListComponent.prototype.updatePosts = function () {
         this.myPosts = this.createPostService.fetchPosts(this.query);

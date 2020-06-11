@@ -11,26 +11,13 @@ var core_1 = require("@angular/core");
 var PostsComponent = /** @class */ (function () {
     function PostsComponent(createPostService) {
         this.createPostService = createPostService;
-        // tslint:disable-next-line: no-inferrable-types
         this.query = '';
     }
     PostsComponent.prototype.ngOnInit = function () {
-        console.log('myPosts');
         this.updatePosts();
-    };
-    PostsComponent.prototype.onDelete = function (myPostId) {
-        var _this = this;
-        this.createPostService.deletePost(myPostId)
-            .then(function () {
-            _this.updatePosts();
-        });
-    };
-    PostsComponent.prototype.search = function (query) {
-        this.query = query;
     };
     PostsComponent.prototype.updatePosts = function () {
         this.myPosts = this.createPostService.fetchPosts(this.query);
-        console.log('myPostsxx');
     };
     PostsComponent = __decorate([
         core_1.Component({

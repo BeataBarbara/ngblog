@@ -1,12 +1,12 @@
-<h2>Dodaj post</h2>
-<form [formGroup]="createPost" novalidate>
+<h2 style="text-align: center; color:antiquewhite">Dodaj post</h2>
+<form [formGroup]=" createPost " novalidate style="text-align: center; color:antiquewhite">
     <section>
 
-        <div class="control"> <label>
+        <div class="control "> <label>
             Tytuł:  
-                <input class="input is-primary" type="text" placeholder="Plese type title" formControlName="title">
+                <input class="input is-info " type="text " placeholder="Plese type title " formControlName="title " style="width: 600px; ">
              
-            <p *ngIf="showErrors && createPost.get('title').errors?.minlength" style="color:red;font-weight:bold;">
+            <p *ngIf="showErrors && createPost.get( 'title').errors?.minlength " style="color:rgb(201, 42, 42);font-weight:bold; ">
                 Tytuł musi mieć conajmniej 5 znaków.
             </p>
         </label> </div>
@@ -14,20 +14,19 @@
     <section>
         <label>
             Treść: <br>
-            <div class="control">
-                <textarea class="textarea is-primary is-medium" placeholder="Type the conten of your post here" formControlName="text"></textarea>
+            <div class="control ">
+                <textarea class="textarea is-primary is-medium " placeholder="Type the conten of your post here " formControlName="text " style="width: 700px; min-height:400px "></textarea>
               </div>
-            <p *ngIf="showErrors && createPost.get('text').errors?.minlength" style="color:red;font-weight:bold;">
+            <p *ngIf="showErrors && createPost.get( 'text').errors?.minlength " style="color:rgb(201, 42, 42);font-weight:bold; ">
                 Zawartość powinna mieć minimum 100 znaków.
             </p>
         </label>
     </section>
-    <button type="button" (click)="save()">Save</button>
+    <button type="button " (click)="save() " class="button is-primary ">Save</button>
 </form>
 
-<p *ngIf="postIsReady" style="color:antiquewhite">
+<p *ngIf="postIsReady " style="color:antiquewhite ">
     Post został dodany
 </p>
-<!-- <ng-container *ngIf="postIfReady = true">
-    Post został dodany
-</ng-container> -->
+
+<app-post-title *ngFor="let myPost of myPosts | async " [myPost]="myPost ">{{myPost.title}}</app-post-title>

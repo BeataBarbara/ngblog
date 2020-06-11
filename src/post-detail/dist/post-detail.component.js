@@ -12,10 +12,7 @@ var PostDetailComponent = /** @class */ (function () {
     function PostDetailComponent(createPostService, activatedRoute) {
         this.createPostService = createPostService;
         this.activatedRoute = activatedRoute;
-        this.myPost = {
-            title: 'brak',
-            text: 'brak'
-        };
+        this["delete"] = new core_1.EventEmitter();
     }
     PostDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -28,6 +25,12 @@ var PostDetailComponent = /** @class */ (function () {
             console.log(error);
         });
     };
+    __decorate([
+        core_1.Input()
+    ], PostDetailComponent.prototype, "myPost");
+    __decorate([
+        core_1.Output()
+    ], PostDetailComponent.prototype, "delete");
     PostDetailComponent = __decorate([
         core_1.Component({
             selector: 'app-post-detail',
