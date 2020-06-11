@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    padding: 1em;
+    top: 60px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+}
+
+.main {
+    position: relative;
+    width: 75%;
+    margin: 10px;
+    padding: 1em;
+    overflow: auto;
+    min-height: 200px;
+    border-radius: 15px;
+    background-color: DarkMagenta;
+    color: azure
+}
+
+.aside {
+    position: relative;
+    width: 25%;
+    min-height: 300px;
+    padding: 1em;
+    margin: 10px;
+    border-radius: 15px;
+    background-color: rgb(250, 202, 98);
+    color: black
+}
+
+input {
+    width: 400px;
+}
+
+label {
+    width: 95%;
+}
+
+textarea {
+    width: 95%;
+    min-height: 400px
+}
+
+button {
+    width: 90%;
+}
+
+@media (max-width: 768px) {
+    .main,
+    .aside {
+        margin: 3px;
+        padding: 0.5em;
+        width: 100%;
+        height: auto;
+    }
+    input {
+        width: max-content;
+    }
+    textarea {
+        height: 200px;
+    }
+}

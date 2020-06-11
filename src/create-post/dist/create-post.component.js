@@ -16,6 +16,7 @@ var CreatePostComponent = /** @class */ (function () {
         this.query = '';
         this.postIsReady = false;
         this.showErrors = false;
+        this.isHidden = false;
     }
     CreatePostComponent.prototype.ngOnInit = function () {
         this.updatePosts();
@@ -30,6 +31,7 @@ var CreatePostComponent = /** @class */ (function () {
             this.createpostservice.createPost(formValue)
                 .then(function (success) { return console.info(success); })["catch"](function (failure) { return console.error(failure); });
             this.postIsReady = true;
+            this.updatePosts();
         }
         else {
             this.showErrors = true;

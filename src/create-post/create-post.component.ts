@@ -15,6 +15,7 @@ export class CreatePostComponent implements OnInit {
   createPost: FormGroup;
   postIsReady: boolean = false;
   showErrors: boolean = false;
+  isHidden: boolean = false;
 
   constructor(public formBuilder: FormBuilder, public createpostservice: CreatePostService) { }
 
@@ -33,6 +34,7 @@ export class CreatePostComponent implements OnInit {
         .then(success => console.info(success))
         .catch(failure => console.error(failure));
       this.postIsReady = true;
+      this.updatePosts();
     } else {
       this.showErrors = true;
       console.log('Nie można zapisać postu. Sprawdź komunikaty o błędach.');
