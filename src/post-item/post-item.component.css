@@ -1,0 +1,13 @@
+.btn1 {
+    color: black;
+    margin-right: 10px;
+    text-align: center;
+    width: 300px;
+    background-color: Violet
+}
+
+.btn2 {
+    color: violet;
+    border-color: violet;
+    width: 100px;
+}

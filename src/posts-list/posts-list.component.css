@@ -1,0 +1,14 @@
+form {
+    margin: 50px;
+    margin-bottom: 40px;
+}
+
+input {
+    width: 400px;
+}
+
+.btn2 {
+    color: violet;
+    border-color: violet;
+    width: 100px;
+}

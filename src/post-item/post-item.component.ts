@@ -13,5 +13,6 @@ export class PostItemComponent {
   onClick() {
     this.delete.emit(this.myPost.id);
   }
-
+// tslint:disable-next-line: member-ordering
+isHidden: boolean = true;
 }

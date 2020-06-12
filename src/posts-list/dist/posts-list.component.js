@@ -11,8 +11,8 @@ var core_1 = require("@angular/core");
 var PostsListComponent = /** @class */ (function () {
     function PostsListComponent(createPostService) {
         this.createPostService = createPostService;
-        // tslint:disable-next-line: no-inferrable-types
         this.query = '';
+        this.isHidden = true;
     }
     PostsListComponent.prototype.ngOnInit = function () {
         this.updatePosts();

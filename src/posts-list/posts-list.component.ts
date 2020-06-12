@@ -8,8 +8,8 @@ import { CreatePostService } from '../create-post.service';
 })
 export class PostsListComponent implements OnInit {
   myPosts;
-  // tslint:disable-next-line: no-inferrable-types
   query: string = '';
+  isHidden: boolean = true;
 
   constructor(public createPostService: CreatePostService) { }
 

@@ -1,11 +1,11 @@
 <h2 style="color: antiquewhite; text-align: center">List of posts</h2>
 <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2 " type="search" placeholder="Wyszukaj " aria-label="search" #queryInput>
-    <button class="btn btn-outline-success my-2 my-sm-0 " type="button " (click)="search(queryInput.value)">Search!</button>
+    <input class="form-control mr-sm-2" type="search" placeholder="Wyszukaj " aria-label="search" style="width: 300px;" #queryInput>
+    <button class="btn btn-outline-success my-2 my-sm-0 btn2" type="button " (click)="search(queryInput.value)">Search!</button>
 </form>
 <section>
     <ul>
-        <app-post-item *ngFor="let myPost of myPosts | async" [myPost]="myPost" (delete)="onDelete($event)"> </app-post-item>
+        <app-post-item *ngFor="let odd = odd; let myPost of myPosts | async" [ngClass]="{'odd-item':odd===true}" [myPost]="myPost" (delete)="onDelete($event)"> </app-post-item>
     </ul>
 
 </section>

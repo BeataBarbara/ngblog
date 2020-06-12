@@ -24,7 +24,7 @@ var posts_component_1 = require("../posts/posts.component");
 var post_item_component_1 = require("../post-item/post-item.component");
 var create_post_service_1 = require("src/create-post.service");
 var post_title_component_1 = require("../post-title/post-title.component");
-var ngx_pagination_1 = require("ngx-pagination");
+var ngx_pipes_1 = require("ngx-pipes");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -47,7 +47,7 @@ var AppModule = /** @class */ (function () {
                 http_1.HttpClientModule,
                 router_1.RouterModule.forRoot(app_routes_1.appRoutes),
                 forms_2.ReactiveFormsModule,
-                ngx_pagination_1.NgxPaginationModule
+                ngx_pipes_1.NgPipesModule
             ],
             providers: [create_post_service_1.CreatePostService],
             bootstrap: [app_component_1.AppComponent]

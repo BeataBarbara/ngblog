@@ -1,4 +1,4 @@
-<div>
-    <h4><a routerLink="/list/{{myPost.id}}">{{ myPost.title }}</a></h4>
-    <button type=" button " (click)="onClick() ">Delete</button>
+<div style="margin: 10px">
+    <button routerLink="/list/{{myPost.id}}" class="btn btn-primary btn1">{{ myPost.title }}</button>
+    <button type=" button " (click)="onClick()" class="btn btn-outline-primary btn2">Delete</button>
 </div>

@@ -15,7 +15,7 @@ import { PostsComponent } from '../posts/posts.component';
 import { PostItemComponent } from '../post-item/post-item.component';
 import { CreatePostService } from 'src/create-post.service';
 import { PostTitleComponent } from '../post-title/post-title.component';
-import { NgxPaginationModule } from 'ngx-pagination';
+import {NgPipesModule} from 'ngx-pipes';
 
 @NgModule({
   declarations: [
@@ -35,8 +35,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
-    NgxPaginationModule
-  ],
+    NgPipesModule
+    ],
   providers: [CreatePostService],
   bootstrap: [AppComponent]
 })

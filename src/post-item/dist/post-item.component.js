@@ -11,6 +11,8 @@ var core_1 = require("@angular/core");
 var PostItemComponent = /** @class */ (function () {
     function PostItemComponent() {
         this["delete"] = new core_1.EventEmitter();
+        // tslint:disable-next-line: member-ordering
+        this.isHidden = true;
     }
     PostItemComponent.prototype.onClick = function () {
         this["delete"].emit(this.myPost.id);
