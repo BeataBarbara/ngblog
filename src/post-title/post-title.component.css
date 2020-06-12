@@ -1,11 +1,11 @@
     a {
         text-decoration: none;
         color: black;
-        font-size: 0.8em
+        font-size: 0.7em
     }
     
     @media (max-width: 1000px) {
         a {
-            font-size: 0.6em
+            font-size: 0.5em
         }
     }

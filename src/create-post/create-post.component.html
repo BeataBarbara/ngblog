@@ -1,7 +1,7 @@
 <div class=container>
     <div class="main">
-        <h2 style="text-align: center; color:antiquewhite">Dodaj post</h2>
-        <form [formGroup]=" createPost " novalidate style="text-align: center; color:antiquewhite">
+        <h2 style="text-align: center;">Dodaj post</h2>
+        <form [formGroup]=" createPost " novalidate style="text-align: center">
             <section>
                 <div class="control "> <label>
                         Tytuł:
@@ -13,8 +13,9 @@
                         </p>
                     </label> </div>
             </section>
-            <section>
-                <label>Treść: <br>
+            <div class="post">
+                <section class="text">
+                    <label>Treść: <br>
                     <div class="control " >
                         <textarea class="textarea is-primary is-medium "
                             placeholder="Type the conten of your post here " formControlName="text"
@@ -25,19 +26,33 @@
                         Zawartość powinna mieć minimum 100 znaków.
                     </p>
                 </label>
-            </section>
+                </section>
+                <section class="tag">
+                    <label> Tagi:
+                    <div formGroupName="tags">
+                        <div *ngFor="let t of createPost.get('tags').value | keyvalue" class="tag-check">
+                            <input type="checkbox" [formControlName]="t.key" [value]="t.value" class="tag-check"> {{t.key}}
+                        </div>
+                    </div>
+                </label>
+                </section>
+            </div>
+
             <button type="button" (click)="save() " class="btn btn-dark">Save</button>
         </form> <br>
         <div style="width: 100%; display:flex">
-            <p *ngIf="postIsReady " style="width: 100%; align-items: center; justify-content: center;" class="alert alert-warning" role="alert">
+            <p *ngIf="postIsReady " style="width: 100%; align-items: center; justify-content: center;" class="alert alert-warning hight-resolution" role="alert">
                 Post został dodany. Znajdzieszgo na liście po prawo.
             </p>
+            <p *ngIf="postIsReady " style="width: 100%; align-items: center; justify-content: center;" class="alert alert-warning low-resolution" role="alert">
+                Post został dodany. Znajdzieszgo na liście u góry.
+            </p>
         </div>
+
 
     </div>
     <div class="aside">
         <app-post-title *ngFor="let myPost of myPosts | async | invert" [myPost]="myPost ">{{myPost.title}}
         </app-post-title>
     </div>
-
 </div>

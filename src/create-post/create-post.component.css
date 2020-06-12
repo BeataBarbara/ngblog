@@ -7,33 +7,57 @@
     width: 100%;
 }
 
+@media (min-width:769px) {
+    .low-resolution {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column-reverse;
+    }
+    .hight-resolution {
+        display: none;
     }
 }
 
 .main {
     position: relative;
-    width: 75%;
+    width: 85%;
     margin: 10px;
     padding: 1em;
     overflow: auto;
     min-height: 200px;
     border-radius: 15px;
     background-color: DarkMagenta;
-    color: azure
+    color: antiquewhite
 }
 
 .aside {
     position: relative;
-    width: 25%;
+    width: 15%;
     min-height: 300px;
     padding: 1em;
     margin: 10px;
     border-radius: 15px;
     background-color: rgb(250, 202, 98);
-    color: black
+    color: black;
+}
+
+.post {
+    display: flex;
+}
+
+.text {
+    width: 100%;
+}
+
+.tag-check {
+    display: flex;
+    padding-left: 0.5em;
+    font-size: 0.8em;
+    width: auto;
 }
 
 input {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CreatePostService } from '../create-post.service';
+import { Tags } from '../myPost';
 
 
 
@@ -13,17 +14,25 @@ export class CreatePostComponent implements OnInit {
   myPosts;
   query: string = '';
   createPost: FormGroup;
-  postIsReady: boolean = false;
   showErrors: boolean = false;
-  isHidden: boolean = false;
+  postIsReady: boolean = false;
+  date: Date = new Date();
 
   constructor(public formBuilder: FormBuilder, public createpostservice: CreatePostService) { }
 
   ngOnInit() {
     this.updatePosts();
     this.createPost = this.formBuilder.group({
+      tags: this.formBuilder.group({
+        [Tags.Hair]: false,
+        [Tags.Fry]: false,
+        [Tags.Soap]: false,
+        [Tags.Recomend]: false,
+        [Tags.Face]: false,
+      }),
       title: ['', Validators.minLength(5)],
-      text: ['', Validators.minLength(100)]
+      text: ['', Validators.minLength(100)],
+      date: this.date
     });
   }
 

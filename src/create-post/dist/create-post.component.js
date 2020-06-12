@@ -9,20 +9,30 @@ exports.__esModule = true;
 exports.CreatePostComponent = void 0;
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
+var myPost_1 = require("../myPost");
 var CreatePostComponent = /** @class */ (function () {
     function CreatePostComponent(formBuilder, createpostservice) {
         this.formBuilder = formBuilder;
         this.createpostservice = createpostservice;
         this.query = '';
-        this.postIsReady = false;
         this.showErrors = false;
-        this.isHidden = false;
+        this.postIsReady = false;
+        this.date = new Date();
     }
     CreatePostComponent.prototype.ngOnInit = function () {
+        var _a;
         this.updatePosts();
         this.createPost = this.formBuilder.group({
+            tags: this.formBuilder.group((_a = {},
+                _a[myPost_1.Tags.Hair] = false,
+                _a[myPost_1.Tags.Fry] = false,
+                _a[myPost_1.Tags.Soap] = false,
+                _a[myPost_1.Tags.Recomend] = false,
+                _a[myPost_1.Tags.Face] = false,
+                _a)),
             title: ['', forms_1.Validators.minLength(5)],
-            text: ['', forms_1.Validators.minLength(100)]
+            text: ['', forms_1.Validators.minLength(100)],
+            date: this.date
         });
     };
     CreatePostComponent.prototype.save = function () {
