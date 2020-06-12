@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CreatePostService } from 'src/create-post.service';
-import { MyPost } from '../myPost';
+import { MyPost, Tags } from '../myPost';
 
 @Component({
   selector: 'app-post-detail',

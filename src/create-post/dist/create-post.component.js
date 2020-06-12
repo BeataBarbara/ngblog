@@ -35,9 +35,20 @@ var CreatePostComponent = /** @class */ (function () {
             date: this.date
         });
     };
+    CreatePostComponent.prototype.getTags = function (tags) {
+        var myTags = [];
+        for (var key in tags) {
+            if (tags[key]) {
+                myTags.push(key);
+            }
+        }
+        return myTags;
+    };
     CreatePostComponent.prototype.save = function () {
         if (this.createPost.valid) {
             var formValue = this.createPost.getRawValue();
+            // formValue.ingredients = this.getSelectedIngredients(formValue.ingredients);
+            formValue.tags = this.getTags(formValue.tags);
             this.createpostservice.createPost(formValue)
                 .then(function (success) { return console.info(success); })["catch"](function (failure) { return console.error(failure); });
             this.postIsReady = true;

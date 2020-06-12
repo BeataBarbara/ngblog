@@ -10,6 +10,6 @@ export interface MyPost {
     id?: number;
     title: string;
     text: string;
-    tags?: Tags;
+    tags?: Tags [   ];
     date: Date;
 }

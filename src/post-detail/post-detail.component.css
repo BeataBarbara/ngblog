@@ -11,4 +11,11 @@ div {
 p {
     font-size: 20px;
     color: azure;
+    text-align: justify;
+}
+
+.tags {
+    background-color: rgb(25, 92, 70);
+    width: fit-content;
+    margin: 10px;
 }

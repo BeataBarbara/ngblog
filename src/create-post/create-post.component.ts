@@ -36,9 +36,20 @@ export class CreatePostComponent implements OnInit {
     });
   }
 
+getTags(tags: Tags[]): Tags[] {
+  const myTags = [];
+  for (let key in tags) {
+  if (tags[key]) {
+    myTags.push(key);
+  }
+}
+  return myTags;
+}
   save() {
     if (this.createPost.valid) {
       const formValue = this.createPost.getRawValue();
+      // formValue.ingredients = this.getSelectedIngredients(formValue.ingredients);
+      formValue.tags = this.getTags(formValue.tags);
       this.createpostservice.createPost(formValue)
         .then(success => console.info(success))
         .catch(failure => console.error(failure));
