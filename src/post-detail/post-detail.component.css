@@ -1,0 +1,12 @@
+div {
+    background-color: SeaGreen;
+    color: azure;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+p {
+    font-size: 25px;
+    color: azure;
+}
