@@ -21,8 +21,8 @@
                             <textarea class="textarea is-primary is-medium "
                                 placeholder="Type the conten of your post here " formControlName="text"></textarea>
                         </div>
-                        <p *ngIf="showErrors && createPost.get( 'title').errors?.minlength " class="alert alert-danger"
-                        role="alert" style="width: 240px; height: 22px; font-size:0.8em; padding:0; margin: auto">
+                        <p *ngIf="showErrors && createPost.get( 'text').errors?.minlength " class="alert alert-danger"
+                        role="alert" style="width: 290px; height: 22px; font-size:0.8em; padding:0; margin: auto">
                             Zawartość powinna mieć minimum 100 znaków.
                         </p>
                     </label>

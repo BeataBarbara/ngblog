@@ -9,12 +9,28 @@ import { CreatePostService } from '../create-post.service';
 export class PostsListComponent implements OnInit {
   myPosts;
   query: string = '';
-  isHidden: boolean = true;
+  isHiddenBaseView: boolean = true;
+  isHiddenSortDate: boolean = false;
+  isHiddenSortTitle: boolean = false;
+  // isHidden: boolean = true;
+  // isHidden: boolean = true;
+  // isHidden: boolean = true;
 
   constructor(public createPostService: CreatePostService) { }
 
   ngOnInit() {
     this.updatePosts();
+  }
+
+  sortDate() {
+    this.isHiddenBaseView = false;
+    this.isHiddenSortDate = true;
+    this.isHiddenSortTitle = false;
+  }
+  sortName() {
+    this.isHiddenBaseView = false;
+    this.isHiddenSortDate = false;
+    this.isHiddenSortTitle = true;
   }
 
   onDelete(myPostId) {

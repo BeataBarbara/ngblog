@@ -17,5 +17,8 @@ p {
 .tags {
     background-color: rgb(25, 92, 70);
     width: fit-content;
-    margin: 10px;
+    margin: 5px;
+    padding: 4px;
+    display: inline-block;
+    font-size: 1em;
 }

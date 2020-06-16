@@ -9,13 +9,28 @@ exports.__esModule = true;
 exports.PostsListComponent = void 0;
 var core_1 = require("@angular/core");
 var PostsListComponent = /** @class */ (function () {
+    // isHidden: boolean = true;
+    // isHidden: boolean = true;
+    // isHidden: boolean = true;
     function PostsListComponent(createPostService) {
         this.createPostService = createPostService;
         this.query = '';
-        this.isHidden = true;
+        this.isHiddenBaseView = true;
+        this.isHiddenSortDate = false;
+        this.isHiddenSortTitle = false;
     }
     PostsListComponent.prototype.ngOnInit = function () {
         this.updatePosts();
+    };
+    PostsListComponent.prototype.sortDate = function () {
+        this.isHiddenBaseView = false;
+        this.isHiddenSortDate = true;
+        this.isHiddenSortTitle = false;
+    };
+    PostsListComponent.prototype.sortName = function () {
+        this.isHiddenBaseView = false;
+        this.isHiddenSortDate = false;
+        this.isHiddenSortTitle = true;
     };
     PostsListComponent.prototype.onDelete = function (myPostId) {
         var _this = this;

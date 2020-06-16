@@ -4,7 +4,7 @@
     "scripts": {
         "db": "json-server --watch database.json",
         "ng": "ng",
-        "start": "ng s",
+        "start": "ng run start ng config -g cli.warnings.versionMismatch false",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
