@@ -1,4 +1,5 @@
-.btn1 {
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+.btn-primary {
     color: black;
     margin-right: 10px;
     text-align: center;
@@ -6,8 +7,34 @@
     background-color: Violet
 }
 
-.btn2 {
+.btn-primary:hover {
+    color: DeepPink;
+    background-image: none;
+    background-color: transparent;
+    border-color: DeepPink;
+}
+
+.btn-outline-primary {
     color: violet;
+    background-image: none;
+    background-color: transparent;
     border-color: violet;
-    width: 100px;
+}
+
+.btn-outline-primary:hover {
+    color: black;
+    margin-right: 10px;
+    text-align: center;
+    background-color: DeepPink;
+    border-color: DeepPink;
+}
+
+.toDelete {
+    background: #415665;
+    height: 50px;
+    width: 200px;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 22px;
+    color: #fff;
 }

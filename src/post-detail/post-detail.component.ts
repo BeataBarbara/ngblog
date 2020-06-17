@@ -17,6 +17,7 @@ export class PostDetailComponent implements OnInit {
   ngOnInit() {
     const myPostId = this.activatedRoute.snapshot.params.id;
 
+
     this.createPostService.fetchPost(myPostId)
     .then((myPost: MyPost) => {
       console.log(myPost);
@@ -25,6 +26,6 @@ export class PostDetailComponent implements OnInit {
     .catch(error => {
       console.log(error);
     });
-  }
 
+  }
 }

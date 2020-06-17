@@ -8,15 +8,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.PostItemComponent = void 0;
 var core_1 = require("@angular/core");
+var confirm_component_1 = require("../confirm/confirm.component");
 var PostItemComponent = /** @class */ (function () {
-    function PostItemComponent() {
+    function PostItemComponent(dialog) {
+        this.dialog = dialog;
         this["delete"] = new core_1.EventEmitter();
-        this.isHidden = false;
-        // tslint:disable-next-line: member-ordering
-        // isHidden: boolean = true;
+        this.title = 'Usuwanie postu';
     }
     PostItemComponent.prototype.onClick = function () {
         this["delete"].emit(this.myPost.id);
+    };
+    PostItemComponent.prototype.openDialog = function () {
+        var _this = this;
+        var dialogRef = this.dialog.open(confirm_component_1.ConfirmComponent, {
+            width: '350px',
+            data: "Czy chcesz usun\u0105\u0107 ten post?"
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            if (result) {
+                console.log('Yes clicked');
+                _this["delete"].emit(_this.myPost.id);
+            }
+        });
     };
     __decorate([
         core_1.Input()

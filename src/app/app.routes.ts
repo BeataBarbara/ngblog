@@ -7,6 +7,7 @@ import { OopsComponent } from '../oops/oops.component';
 import { PostsComponent } from '../posts/posts.component';
 
 
+
 export const appRoutes: Route[] = [
     { path: '', component: PostsComponent },
     { path: 'create', component: CreatePostComponent },

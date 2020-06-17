@@ -1,3 +1,6 @@
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -13,31 +16,44 @@ import { PostDetailComponent } from '../post-detail/post-detail.component';
 import { PostsListComponent } from '../posts-list/posts-list.component';
 import { PostsComponent } from '../posts/posts.component';
 import { PostItemComponent } from '../post-item/post-item.component';
-import { CreatePostService } from 'src/create-post.service';
+import { CreatePostService } from '../create-post.service';
 import { PostTitleComponent } from '../post-title/post-title.component';
-import {NgPipesModule} from 'ngx-pipes';
+import { NgPipesModule } from 'ngx-pipes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmComponent } from '../confirm/confirm.component';
+
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PostsComponent,
-    CreatePostComponent,
-    OopsComponent,
-    PostsListComponent,
-    PostDetailComponent,
-    PostItemComponent,
-    PostTitleComponent
-  ],
-  imports: [
-    BrowserModule,
-    CommonModule,
-    FormsModule,
-    HttpClientModule,
-    RouterModule.forRoot(appRoutes),
-    ReactiveFormsModule,
-    NgPipesModule
-    ],
-  providers: [CreatePostService],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      PostsComponent,
+      CreatePostComponent,
+      OopsComponent,
+      PostsListComponent,
+      PostDetailComponent,
+      PostItemComponent,
+      PostTitleComponent,
+      ConfirmComponent
+   ],
+   imports: [
+      BrowserModule,
+      CommonModule,
+      FormsModule,
+      HttpClientModule,
+      RouterModule.forRoot(appRoutes),
+      ReactiveFormsModule,
+      NgPipesModule,
+      BrowserAnimationsModule,
+      MatButtonModule,
+      MatSnackBarModule,
+      MatDialogModule
+   ],
+   providers: [
+      CreatePostService
+   ],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CreatePostService } from '../create-post.service';
+import bootbox from 'bootbox/bootbox.js';
 
 @Component({
   selector: 'app-posts-list',
@@ -7,16 +8,16 @@ import { CreatePostService } from '../create-post.service';
   styleUrls: ['./posts-list.component.css']
 })
 export class PostsListComponent implements OnInit {
+
+
+  constructor(public createPostService: CreatePostService) { }  
+  
   myPosts;
   query: string = '';
   isHiddenBaseView: boolean = true;
   isHiddenSortDate: boolean = false;
   isHiddenSortTitle: boolean = false;
-  // isHidden: boolean = true;
-  // isHidden: boolean = true;
-  // isHidden: boolean = true;
-
-  constructor(public createPostService: CreatePostService) { }
+  isHiddenSortTextLen: boolean = false;
 
   ngOnInit() {
     this.updatePosts();
