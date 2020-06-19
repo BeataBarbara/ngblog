@@ -23,7 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmComponent } from '../confirm/confirm.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';;
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
    declarations: [
@@ -51,7 +52,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
       MatDialogModule,
       MatPaginatorModule,
       MatSortModule,
-      NgxPaginationModule
+      NgxPaginationModule,
+      BrowserModule,
+      MatButtonModule, 
+      MatIconModule
    ],
    providers: [
       CreatePostService

@@ -52,12 +52,12 @@ var CreatePostComponent = /** @class */ (function () {
             this.createpostservice.createPost(formValue)
                 .then(function (success) { return console.info(success); })["catch"](function (failure) { return console.error(failure); });
             this.postIsReady = true;
-            this.updatePosts();
         }
         else {
             this.showErrors = true;
             console.log('Nie można zapisać postu. Sprawdź komunikaty o błędach.');
         }
+        this.updatePosts();
     };
     CreatePostComponent.prototype.updatePosts = function () {
         this.myPosts = this.createpostservice.fetchPosts(this.query);

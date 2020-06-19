@@ -1,6 +1,6 @@
 import { CreatePostService } from './../create-post.service';
 import { Component,  OnInit } from '@angular/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -10,13 +10,14 @@ import { Component,  OnInit } from '@angular/core';
 
 export class PostsComponent implements OnInit {
   myPosts;
+  query: string = '';
 
- query: string = '';
 
-  constructor(public createPostService: CreatePostService) {   }
+constructor( public createPostService: CreatePostService) {}
 
   ngOnInit() {
     this.updatePosts();
+    // this.dataSource.paginator = this.paginator;
   }
 
   updatePosts() {

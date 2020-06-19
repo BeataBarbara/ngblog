@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CreatePostService } from '../create-post.service';
 import { Tags } from '../myPost';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +18,8 @@ export class CreatePostComponent implements OnInit {
   postIsReady: boolean = false;
   date: Date = new Date();
 
-  constructor(public formBuilder: FormBuilder, public createpostservice: CreatePostService) { }
+
+  constructor(public formBuilder: FormBuilder, public createpostservice: CreatePostService) {  }
 
   ngOnInit() {
     this.updatePosts();
@@ -36,15 +37,15 @@ export class CreatePostComponent implements OnInit {
     });
   }
 
-getTags(tags: Tags[]): Tags[] {
-  const myTags = [];
-  for (let key in tags) {
-  if (tags[key]) {
-    myTags.push(key);
+  getTags(tags: Tags[]): Tags[] {
+    const myTags = [];
+    for (let key in tags) {
+      if (tags[key]) {
+        myTags.push(key);
+      }
+    }
+    return myTags;
   }
-}
-  return myTags;
-}
   save() {
     if (this.createPost.valid) {
       const formValue = this.createPost.getRawValue();
@@ -54,11 +55,11 @@ getTags(tags: Tags[]): Tags[] {
         .then(success => console.info(success))
         .catch(failure => console.error(failure));
       this.postIsReady = true;
-      this.updatePosts();
     } else {
       this.showErrors = true;
       console.log('Nie można zapisać postu. Sprawdź komunikaty o błędach.');
     }
+    this.updatePosts();
   }
   updatePosts() {
     this.myPosts = this.createpostservice.fetchPosts(this.query);

@@ -9,6 +9,7 @@ exports.__esModule = true;
 exports.PostItemComponent = void 0;
 var core_1 = require("@angular/core");
 var confirm_component_1 = require("../confirm/confirm.component");
+var animations_1 = require("@angular/animations");
 var PostItemComponent = /** @class */ (function () {
     function PostItemComponent(dialog) {
         this.dialog = dialog;
@@ -22,7 +23,7 @@ var PostItemComponent = /** @class */ (function () {
         var _this = this;
         var dialogRef = this.dialog.open(confirm_component_1.ConfirmComponent, {
             width: '350px',
-            data: "Czy chcesz usun\u0105\u0107 ten post?"
+            data: "Czy chcesz usun\u0105\u0107 post \"" + this.myPost.title + "\"?"
         });
         dialogRef.afterClosed().subscribe(function (result) {
             if (result) {
@@ -41,7 +42,40 @@ var PostItemComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'app-post-item',
             templateUrl: './post-item.component.html',
-            styleUrls: ['./post-item.component.css']
+            styleUrls: ['./post-item.component.css'],
+            animations: [
+                animations_1.trigger('items', [
+                    animations_1.transition(':enter', [
+                        animations_1.style({ transform: 'scale(0.1)', opacity: 0 }),
+                        animations_1.animate('0.7s cubic-bezier(.8, -0.6, 0.26, 1.6)', animations_1.style({ transform: 'scale(1)', opacity: 1 })) // final
+                    ]),
+                    animations_1.transition(':leave', [
+                        animations_1.style({ transform: 'scale(1)', opacity: 1, height: '*' }),
+                        animations_1.animate('0.6s cubic-bezier(.8, -0.6, 0.2, 1.5)', animations_1.style({
+                            transform: 'scale(0.5)', opacity: 0,
+                            height: '0px', margin: '0px'
+                        }))
+                    ])
+                ]),
+                animations_1.trigger('delBut', [
+                    animations_1.transition(':enter', [
+                        animations_1.style({ transform: 'scale(0.5)', opacity: 0 }),
+                        animations_1.animate('1s cubic-bezier(.8, -0.6, 0.26, 1.6)', animations_1.style({ transform: 'scale(1)', opacity: 1 })) // final
+                    ]),
+                    animations_1.transition(':leave', [
+                        animations_1.style({ transform: 'scale(1)', opacity: 1, height: '*' }),
+                        animations_1.animate('0.6s cubic-bezier(.8, -0.6, 0.2, 1.5)', animations_1.style({
+                            transform: 'scale(0.5)', opacity: 0,
+                            height: '0px', margin: '0px'
+                        }))
+                    ])
+                ]),
+                animations_1.trigger('list', [
+                    animations_1.transition(':enter', [
+                        animations_1.query('@items', animations_1.stagger(150, animations_1.animateChild()))
+                    ]),
+                ])
+            ]
         })
     ], PostItemComponent);
     return PostItemComponent;

@@ -20,6 +20,12 @@
     .hight-resolution {
         display: none;
     }
+    .aside {
+        display: block;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1px;
+        grid-auto-rows: minmax(0, auto);
+    }
 }
 
 .main {

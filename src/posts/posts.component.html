@@ -1,7 +1,6 @@
 <nav class="container">
     <div class="main">
         <h1 class="title"> Posty na blogu</h1>
-        <br>
         <section>
             <app-post-detail *ngFor="let myPost of myPosts | async" [myPost]="myPost">
                 <h6 class="alert alert-primary"><a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="text-decoration: none" routerLink="/list/{{myPost.id}}">{{ myPost.title }} </a></h6>
@@ -21,5 +20,4 @@
             </div>
         </div>
     </div>
-
 </nav>

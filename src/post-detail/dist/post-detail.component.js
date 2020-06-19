@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.PostDetailComponent = void 0;
 var core_1 = require("@angular/core");
+var animations_1 = require("@angular/animations");
 var PostDetailComponent = /** @class */ (function () {
     function PostDetailComponent(createPostService, activatedRoute) {
         this.createPostService = createPostService;
@@ -35,7 +36,35 @@ var PostDetailComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'app-post-detail',
             templateUrl: './post-detail.component.html',
-            styleUrls: ['./post-detail.component.css']
+            styleUrls: ['./post-detail.component.css'],
+            animations: [
+                animations_1.trigger('items', [
+                    animations_1.transition(':enter', [
+                        animations_1.style({ transform: 'scale(0.1)', opacity: 0 }),
+                        animations_1.animate('0.7s cubic-bezier(.8, -0.6, 0.26, 1.6)', animations_1.style({ transform: 'scale(1)', opacity: 1 }))
+                    ]),
+                    animations_1.transition(':leave', [
+                        animations_1.style({ transform: 'scale(1)', opacity: 1, height: '*' }),
+                        animations_1.animate('0.6s cubic-bezier(.8, -0.6, 0.2, 1.5)', animations_1.style({
+                            transform: 'scale(0.5)', opacity: 0,
+                            height: '0px', margin: '0px'
+                        }))
+                    ])
+                ]),
+                animations_1.trigger('tag', [
+                    animations_1.transition(':enter', [
+                        animations_1.style({ transform: 'scale(0.1)', opacity: 0 }),
+                        animations_1.animate('1s 0.1s ease', animations_1.style({ transform: 'scale(1)', opacity: 1 }))
+                    ]),
+                    animations_1.transition(':leave', [
+                        animations_1.style({ transform: 'scale(1)', opacity: 1, height: '*' }),
+                        animations_1.animate('0.6s cubic-bezier(.8, -0.6, 0.2, 1.5)', animations_1.style({
+                            transform: 'scale(0.5)', opacity: 0,
+                            height: '0px', margin: '0px'
+                        }))
+                    ])
+                ]),
+            ]
         })
     ], PostDetailComponent);
     return PostDetailComponent;

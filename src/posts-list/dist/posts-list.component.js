@@ -24,11 +24,19 @@ var PostsListComponent = /** @class */ (function () {
         this.isHiddenBaseView = false;
         this.isHiddenSortDate = true;
         this.isHiddenSortTitle = false;
+        this.isHiddenSortTextLen = false;
     };
     PostsListComponent.prototype.sortName = function () {
         this.isHiddenBaseView = false;
         this.isHiddenSortDate = false;
         this.isHiddenSortTitle = true;
+        this.isHiddenSortTextLen = false;
+    };
+    PostsListComponent.prototype.sortText = function () {
+        this.isHiddenBaseView = false;
+        this.isHiddenSortDate = false;
+        this.isHiddenSortTitle = false;
+        this.isHiddenSortTextLen = true;
     };
     PostsListComponent.prototype.onDelete = function (myPostId) {
         var _this = this;

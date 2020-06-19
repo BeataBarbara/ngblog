@@ -33,6 +33,8 @@ var confirm_component_1 = require("../confirm/confirm.component");
 var paginator_1 = require("@angular/material/paginator");
 var sort_1 = require("@angular/material/sort");
 var ngx_pagination_1 = require("ngx-pagination");
+;
+var icon_1 = require("@angular/material/icon");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -63,7 +65,10 @@ var AppModule = /** @class */ (function () {
                 dialog_1.MatDialogModule,
                 paginator_1.MatPaginatorModule,
                 sort_1.MatSortModule,
-                ngx_pagination_1.NgxPaginationModule
+                ngx_pagination_1.NgxPaginationModule,
+                platform_browser_1.BrowserModule,
+                button_1.MatButtonModule,
+                icon_1.MatIconModule
             ],
             providers: [
                 create_post_service_1.CreatePostService

@@ -15,6 +15,7 @@ var PostsComponent = /** @class */ (function () {
     }
     PostsComponent.prototype.ngOnInit = function () {
         this.updatePosts();
+        // this.dataSource.paginator = this.paginator;
     };
     PostsComponent.prototype.updatePosts = function () {
         this.myPosts = this.createPostService.fetchPosts(this.query);

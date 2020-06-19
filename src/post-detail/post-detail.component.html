@@ -1,10 +1,10 @@
 <div>
     <h2> <a style="text-decoration: none; color: azure" routerLink="/list/{{myPost.id}}">{{ myPost.title}}</a> </h2>
     <hr>
-    <p class="alert tags" *ngFor="let tag of myPost.tags">
+    <p @tag class="alert tags" *ngFor="let tag of myPost.tags">
         {{tag}}
     </p>
-    <p>
+    <p @items>
         {{myPost.text}}
     </p>
     <hr>

@@ -1,4 +1,4 @@
-<div style="margin: 10px">
-    <button routerLink="/list/{{myPost.id}}" class="btn btn-primary">{{ myPost.title }} </button>
-    <button (click)="openDialog()" class="btn btn-outline-primary " type=" button">Delete</button>
+<div @list class="list-container" style="margin: 10px">
+    <button @items class=”box” routerLink="/list/{{myPost.id}}" class="btn btn-primary">{{ myPost.title }} </button>
+    <button @items (click)="openDialog()" class="btn btn-outline-primary" type=" button ">Delete</button>
 </div>

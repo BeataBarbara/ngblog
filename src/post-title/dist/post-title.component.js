@@ -8,12 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.PostTitleComponent = void 0;
 var core_1 = require("@angular/core");
+var animations_1 = require("@angular/animations");
 var PostTitleComponent = /** @class */ (function () {
-    function PostTitleComponent(createPostService, activatedRoute) {
+    // colltection = this.myPosts.title;
+    function PostTitleComponent(createPostService, activatedRoute, router) {
+        var _this = this;
         this.createPostService = createPostService;
         this.activatedRoute = activatedRoute;
+        this.router = router;
         this["delete"] = new core_1.EventEmitter();
+        this.config = {
+            currentPage: 1,
+            itemsPerPage: 5,
+            totalItems: 0
+        };
+        activatedRoute.queryParams.subscribe(function (params) { return _this.config.currentPage = params.page ? params.page : 1; });
     }
+    PostTitleComponent.prototype.pageChange = function (newPage) {
+        this.router.navigate([''], { queryParams: { page: newPage } });
+    };
     PostTitleComponent.prototype.ngOnInit = function () {
         var _this = this;
         var myPostId = this.activatedRoute.snapshot.params.id;
@@ -35,7 +48,35 @@ var PostTitleComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'app-post-title',
             templateUrl: './post-title.component.html',
-            styleUrls: ['./post-title.component.css']
+            styleUrls: ['./post-title.component.css'],
+            animations: [
+                animations_1.trigger('items', [
+                    animations_1.transition(':enter', [
+                        animations_1.style({ transform: 'scale(0.1)', opacity: 0 }),
+                        animations_1.animate('1s cubic-bezier(.8, -0.6, 0.26, 1.6)', animations_1.style({ transform: 'scale(1)', opacity: 1 }))
+                    ]),
+                    animations_1.transition(':leave', [
+                        animations_1.style({ transform: 'scale(1)', opacity: 1, height: '*' }),
+                        animations_1.animate('0.6s cubic-bezier(.8, -0.6, 0.2, 1.5)', animations_1.style({
+                            transform: 'scale(0.5)', opacity: 0,
+                            height: '0px', margin: '0px'
+                        }))
+                    ])
+                ]),
+                animations_1.trigger('delBut', [
+                    animations_1.transition(':enter', [
+                        animations_1.style({ transform: 'scale(0.5)', opacity: 0 }),
+                        animations_1.animate('1s cubic-bezier(.8, -0.6, 0.26, 1.6)', animations_1.style({ transform: 'scale(1)', opacity: 1 })) // final
+                    ]),
+                    animations_1.transition(':leave', [
+                        animations_1.style({ transform: 'scale(1)', opacity: 1, height: '*' }),
+                        animations_1.animate('0.6s cubic-bezier(.8, -0.6, 0.2, 1.5)', animations_1.style({
+                            transform: 'scale(0.5)', opacity: 0,
+                            height: '0px', margin: '0px'
+                        }))
+                    ])
+                ]),
+            ]
         })
     ], PostTitleComponent);
     return PostTitleComponent;

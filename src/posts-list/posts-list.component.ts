@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CreatePostService } from '../create-post.service';
-import bootbox from 'bootbox/bootbox.js';
+
 
 @Component({
   selector: 'app-posts-list',
@@ -10,8 +10,8 @@ import bootbox from 'bootbox/bootbox.js';
 export class PostsListComponent implements OnInit {
 
 
-  constructor(public createPostService: CreatePostService) { }  
-  
+  constructor(public createPostService: CreatePostService) { }
+
   myPosts;
   query: string = '';
   isHiddenBaseView: boolean = true;
@@ -27,11 +27,19 @@ export class PostsListComponent implements OnInit {
     this.isHiddenBaseView = false;
     this.isHiddenSortDate = true;
     this.isHiddenSortTitle = false;
+    this.isHiddenSortTextLen = false;
   }
   sortName() {
     this.isHiddenBaseView = false;
     this.isHiddenSortDate = false;
     this.isHiddenSortTitle = true;
+    this.isHiddenSortTextLen = false;
+  }
+  sortText() {
+    this.isHiddenBaseView = false;
+    this.isHiddenSortDate = false;
+    this.isHiddenSortTitle = false;
+    this.isHiddenSortTextLen = true;
   }
 
   onDelete(myPostId) {
