@@ -21,8 +21,9 @@ import { PostTitleComponent } from '../post-title/post-title.component';
 import { NgPipesModule } from 'ngx-pipes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmComponent } from '../confirm/confirm.component';
-
-
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
    declarations: [
@@ -47,7 +48,10 @@ import { ConfirmComponent } from '../confirm/confirm.component';
       BrowserAnimationsModule,
       MatButtonModule,
       MatSnackBarModule,
-      MatDialogModule
+      MatDialogModule,
+      MatPaginatorModule,
+      MatSortModule,
+      NgxPaginationModule
    ],
    providers: [
       CreatePostService
