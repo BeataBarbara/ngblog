@@ -41,28 +41,27 @@ var PostDetailComponent = /** @class */ (function () {
                 animations_1.trigger('items', [
                     animations_1.transition(':enter', [
                         animations_1.style({ transform: 'scale(0.1)', opacity: 0 }),
-                        animations_1.animate('0.7s cubic-bezier(.8, -0.6, 0.26, 1.6)', animations_1.style({ transform: 'scale(1)', opacity: 1 }))
+                        animations_1.animate('1s 0.1s ease-out', animations_1.style({ transform: 'scale(1)', opacity: 1 }))
                     ]),
-                    animations_1.transition(':leave', [
-                        animations_1.style({ transform: 'scale(1)', opacity: 1, height: '*' }),
-                        animations_1.animate('0.6s cubic-bezier(.8, -0.6, 0.2, 1.5)', animations_1.style({
-                            transform: 'scale(0.5)', opacity: 0,
-                            height: '0px', margin: '0px'
-                        }))
-                    ])
                 ]),
+                // trigger('tag', [
+                //     transition(':enter', [
+                //       style({ transform: 'scale(0.1)', opacity: 0 }),
+                //       animate('1s 0.1s ease',
+                //         style({ transform: 'scale(1)', opacity: 1 }))
+                //     ]),
+                // ]),
                 animations_1.trigger('tag', [
-                    animations_1.transition(':enter', [
-                        animations_1.style({ transform: 'scale(0.1)', opacity: 0 }),
-                        animations_1.animate('1s 0.1s ease', animations_1.style({ transform: 'scale(1)', opacity: 1 }))
-                    ]),
-                    animations_1.transition(':leave', [
-                        animations_1.style({ transform: 'scale(1)', opacity: 1, height: '*' }),
-                        animations_1.animate('0.6s cubic-bezier(.8, -0.6, 0.2, 1.5)', animations_1.style({
-                            transform: 'scale(0.5)', opacity: 0,
-                            height: '0px', margin: '0px'
-                        }))
-                    ])
+                    animations_1.state('initial', animations_1.style({
+                        backgroundColor: 'green',
+                        transform: 'scale(1)'
+                    })),
+                    animations_1.state('final', animations_1.style({
+                        backgroundColor: 'red',
+                        transform: 'scale(1.5)'
+                    })),
+                    animations_1.transition('final=>initial', animations_1.animate('1000ms')),
+                    animations_1.transition('initial=>final', animations_1.animate('1500ms'))
                 ]),
             ]
         })

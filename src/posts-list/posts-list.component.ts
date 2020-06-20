@@ -1,5 +1,7 @@
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { CreatePostService } from '../create-post.service';
+import { Tags } from 'src/myPost';
 
 
 @Component({
@@ -10,10 +12,11 @@ import { CreatePostService } from '../create-post.service';
 export class PostsListComponent implements OnInit {
 
 
-  constructor(public createPostService: CreatePostService) { }
+  constructor(public formBuilder: FormBuilder, public createPostService: CreatePostService) { }
 
   myPosts;
   query: string = '';
+  createPost: FormGroup;
   isHiddenBaseView: boolean = true;
   isHiddenSortDate: boolean = false;
   isHiddenSortTitle: boolean = false;
@@ -21,6 +24,15 @@ export class PostsListComponent implements OnInit {
 
   ngOnInit() {
     this.updatePosts();
+    this.createPost = this.formBuilder.group({
+      tags: this.formBuilder.group({
+        [Tags.Hair]: false,
+        [Tags.Fry]: false,
+        [Tags.Soap]: false,
+        [Tags.Recomend]: false,
+        [Tags.Face]: false,
+      }),
+    });
   }
 
   sortDate() {

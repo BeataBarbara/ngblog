@@ -1,50 +1,54 @@
-<br><br><br><br>
-<form class="form-inline my-2 my-lg-0">
-    <label>
-        <input class="form-control mr-sm-2" type="search" placeholder="Wyszukaj " aria-label="search"
-            style="width: 300px;" #queryInput>
-    </label>
+<div>
+    <form class="form-inline my-2 my-lg-0">
+        <label>
+            <input class="form-control mr-sm-2" type="search" placeholder="Wyszukaj " aria-label="search"
+                style="width: 300px;" #queryInput>
+        </label>
 
-    <button class="btn btn-outline-success " type="button " (click)="search(queryInput.value)">Search!</button>
-    <button class="btn btn-outline-success " type="button " (click)="sortName()">Sortuj po nazwie!</button>
-    <button class="btn btn-outline-success " type="button " (click)="sortDate()">Sortuj po dacie!</button>
-    <button class="btn btn-outline-success " type="button " (click)="sortText()">Sortuj po długości!</button>
-</form>
+        <button class="btn btn-outline-success " type="button " (click)="search(queryInput.value)">Szukaj!</button>
 
-<form action="tags">
-    <h5>
-        Wyszukaj posty z tagiem:
-    </h5>
-    <button class="btn btn-outline-success " type="button " (click)="search('Włosy')">Włosy</button>
-    <button class="btn btn-outline-success " type="button " (click)="search('Smażenie')">Smażenie</button>
-    <button class="btn btn-outline-success " type="button " (click)="search('Mydło')">Mydło</button>
-    <button class="btn btn-outline-success " type="button " (click)="search('Wyjątkowy!')">Wyjątkowy!</button>
-    <button class="btn btn-outline-success " type="button " (click)="search('Twarz')">Twarz</button>
-    <button class="btn btn-outline-success " type="button " (click)="search('')">Clear</button>
+    </form>
+    <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-success " type="button " (click)="sortName()">Sortuj po nazwie!</button>
+        <button class="btn btn-outline-success " type="button " (click)="sortDate()">Sortuj po dacie!</button>
+        <button class="btn btn-outline-success " type="button " (click)="sortText()">Sortuj po długości!</button>
+    </form>
 
-</form>
-<ng-container *ngIf="isHiddenBaseView">
-    <h2 style="color: antiquewhite; text-align: center">List of posts</h2>
-    <ul>
-        <app-post-item *ngFor="let odd = odd; let myPost of myPosts | async" [myPost]="myPost" (delete)="onDelete($event)"> </app-post-item>
-    </ul>
-</ng-container>
+    <form action="tags">
+        <h5>
+            Wyszukaj posty z tagiem:
+        </h5>
+        <button class="btn btn-outline-success " type="button " (click)="search('Włosy')">Włosy</button>
+        <button class="btn btn-outline-success " type="button " (click)="search('Smażenie')">Smażenie</button>
+        <button class="btn btn-outline-success " type="button " (click)="search('Mydło')">Mydło</button>
+        <button class="btn btn-outline-success " type="button " (click)="search('Wyjątkowy!')">Wyjątkowy!</button>
+        <button class="btn btn-outline-success " type="button " (click)="search('Twarz')">Twarz</button>
+        <button class="btn btn-outline-success " type="button " (click)="search('')">Wyczyść filtr</button>
 
-<ng-container *ngIf="isHiddenSortDate">
-    <h2 style="color: antiquewhite; text-align: center">Sortuj po dacie</h2>
-    <ul>
-        <app-post-item *ngFor="let odd = odd; let myPost of myPosts | async | orderBy:'date'" [ngClass]="{'odd-item':odd===true}" [myPost]="myPost" (delete)="onDelete($event)"> </app-post-item>
-    </ul>
-</ng-container>
-<ng-container *ngIf="isHiddenSortTitle">
-    <h2 style="color: antiquewhite; text-align: center">Posortowane po nazwie</h2>
-    <ul>
-        <app-post-item *ngFor="let odd = odd; let myPost of myPosts | async | orderBy:'title'" [ngClass]="{'odd-item':odd===true}" [myPost]="myPost" (delete)="onDelete($event)"> </app-post-item>
-    </ul>
-</ng-container>
-<ng-container *ngIf="isHiddenSortTextLen">
-    <h2 style="color: antiquewhite; text-align: center">Posortowane po długości posta</h2>
-    <ul>
-        <app-post-item *ngFor="let odd = odd; let myPost of myPosts | async | orderBy:'text.length'" [myPost]="myPost" (delete)="onDelete($event)"> </app-post-item>
-    </ul>
-</ng-container>
+    </form>
+    <ng-container *ngIf="isHiddenBaseView">
+        <h2 style="color: antiquewhite; text-align: center">Lista postów</h2>
+        <ul>
+            <app-post-item *ngFor="let odd = odd; let myPost of myPosts | async" [myPost]="myPost" (delete)="onDelete($event)"> </app-post-item>
+        </ul>
+    </ng-container>
+
+    <ng-container *ngIf="isHiddenSortDate">
+        <h2 style="color: antiquewhite; text-align: center">Posty posortowane po dacie</h2>
+        <ul>
+            <app-post-item *ngFor="let myPost of myPosts | async | orderBy:'date'" [myPost]="myPost" (delete)="onDelete($event)"> </app-post-item>
+        </ul>
+    </ng-container>
+    <ng-container *ngIf="isHiddenSortTitle">
+        <h2 style="color: antiquewhite; text-align: center">Posty posortowane po nazwie</h2>
+        <ul>
+            <app-post-item *ngFor=" let myPost of myPosts | async | orderBy:'title'" [myPost]="myPost" (delete)="onDelete($event)"> </app-post-item>
+        </ul>
+    </ng-container>
+    <ng-container *ngIf="isHiddenSortTextLen">
+        <h2 style="color: antiquewhite; text-align: center">Posty posortowane po długości posta</h2>
+        <ul>
+            <app-post-item *ngFor=" let myPost of myPosts | async | orderBy:'text.length'" [myPost]="myPost" (delete)="onDelete($event)"> </app-post-item>
+        </ul>
+    </ng-container>
+</div>

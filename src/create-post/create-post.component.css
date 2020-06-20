@@ -4,7 +4,6 @@
     position: absolute;
     padding: 1em;
     top: 60px;
-    width: 100%;
 }
 
 @media (min-width:769px) {
@@ -20,12 +19,6 @@
     .hight-resolution {
         display: none;
     }
-    .aside {
-        display: block;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 1px;
-        grid-auto-rows: minmax(0, auto);
-    }
 }
 
 .main {
@@ -37,13 +30,13 @@
     min-height: 200px;
     border-radius: 15px;
     background-color: DarkMagenta;
-    color: antiquewhite
+    color: antiquewhite;
+    text-align: center
 }
 
 .aside {
     position: relative;
     width: 15%;
-    min-height: 300px;
     padding: 1em;
     margin: 10px;
     border-radius: 15px;
@@ -53,30 +46,33 @@
 
 .post {
     display: flex;
+    width: 100%;
 }
 
 .text {
-    width: 100%;
+    width: 85%;
+}
+
+.tag {
+    width: 15%;
+    text-align: left;
 }
 
 .tag-check {
     display: flex;
     padding-left: 0.5em;
-    font-size: 0.8em;
-    width: auto;
 }
 
 input {
     width: 400px;
 }
 
-label {
-    width: 95%;
+.width100 {
+    width: 100%;
 }
 
 textarea {
-    width: 95%;
-    min-height: 400px
+    height: 400px;
 }
 
 button {

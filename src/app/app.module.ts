@@ -1,6 +1,5 @@
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -21,10 +20,7 @@ import { PostTitleComponent } from '../post-title/post-title.component';
 import { NgPipesModule } from 'ngx-pipes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmComponent } from '../confirm/confirm.component';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { NgxPaginationModule } from 'ngx-pagination';;
-import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
    declarations: [
@@ -48,14 +44,10 @@ import { MatIconModule } from '@angular/material/icon';
       NgPipesModule,
       BrowserAnimationsModule,
       MatButtonModule,
-      MatSnackBarModule,
       MatDialogModule,
-      MatPaginatorModule,
       MatSortModule,
-      NgxPaginationModule,
       BrowserModule,
-      MatButtonModule, 
-      MatIconModule
+      MatButtonModule,
    ],
    providers: [
       CreatePostService

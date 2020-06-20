@@ -1,45 +1,46 @@
 <div class=container>
     <div class="main">
         <h2 style="text-align: center;">Dodaj post</h2>
-        <form [formGroup]=" createPost " novalidate style="text-align: center">
+        <form [formGroup]=" createPost " novalidate>
             <section>
-                <div class="control "> <label>
+                <div class="control"> <label>
                         Tytuł:
-                        <input class="input is-info " type="text " placeholder="Plese type title "
-                            formControlName="title">
-                        <div *ngIf="showErrors && createPost.get( 'title').errors?.minlength " class="alert alert-danger"
-                            role="alert" style="width: 240px; height: 22px; font-size:0.8em; padding:0; margin: auto">
-                            Tytuł musi mieć conajmniej 5 znaków.                             
-                            </div>
+                        <input class="input is-info " type="text " placeholder="Tu wpisz tytuł" formControlName="title">
+                        <div *ngIf="showErrors && createPost.get( 'title').errors?.minlength "
+                            class="alert alert-danger" role="alert"
+                            style="width: 240px; height: 22px; font-size:0.8em; padding:0; margin: auto">
+                            Tytuł musi mieć conajmniej 5 znaków.
+                        </div>
 
                     </label> </div>
             </section>
             <div class="post">
                 <section class="text">
-                    <label>Treść: <br>
-                        <div class="control ">
-                            <textarea class="textarea is-primary is-medium "
-                                placeholder="Type the conten of your post here " formControlName="text"></textarea>
+                    <label class="width100">Treść: <br>
+                        <div class="control width100">
+                            <textarea class="is-primary is-medium width100" placeholder="Tu wpisz treść"
+                                formControlName="text"></textarea>
                         </div>
                         <p *ngIf="showErrors && createPost.get( 'text').errors?.minlength " class="alert alert-danger"
-                        role="alert" style="width: 290px; height: 22px; font-size:0.8em; padding:0; margin: auto">
+                            role="alert" style="width: 290px; height: 22px; font-size:0.8em; padding:0; margin: auto">
                             Zawartość powinna mieć minimum 100 znaków.
                         </p>
                     </label>
                 </section>
                 <section class="tag">
-                    <label> Tagi:
-                        <div formGroupName="tags">
-                            <div *ngFor="let t of createPost.get('tags').value | keyvalue" class="tag-check">
-                                <input type="checkbox" [formControlName]="t.key" [value]="t.value" class="tag-check">
-                                {{t.key}}
-                            </div>
-                        </div>
+                    <label class="width100" style="width:50px; height:2em"> Tagi:
+                        <ng-container formGroupName="tags" class="tag-check width100"
+                            *ngFor="let t of createPost.get('tags').value | keyvalue">
+                            <label class="tag-check width100" for="t.value">
+                                <input class="width100" type="checkbox" [formControlName]="t.key" [value]="t.value"
+                                    id="t.value"> {{t.key}}
+                            </label>
+                    </ng-container>
+
                     </label>
                 </section>
             </div>
-
-            <button type="button" (click)="save() " class="btn btn-dark">Save</button>
+            <button type="button" (click)="save() " class="btn btn-dark">Zapisz post</button>
         </form> <br>
         <div style="width: 100%; display:flex">
             <p *ngIf="postIsReady " style="width: 100%; align-items: center; justify-content: center;" class="alert alert-warning hight-resolution" role="alert">

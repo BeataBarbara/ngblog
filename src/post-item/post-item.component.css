@@ -1,4 +1,7 @@
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+.list-container {
+    margin: 10px;
+}
+
 .btn-primary {
     color: black;
     margin-right: 10px;
@@ -29,12 +32,20 @@
     border-color: DeepPink;
 }
 
-.toDelete {
-    background: #415665;
-    height: 50px;
-    width: 200px;
-    border-radius: 15px;
-    padding: 20px;
-    font-size: 22px;
-    color: #fff;
+.delete:focus {
+    outline: 3px solid DeepPink;
+}
+
+@media (max-width: 500px) {
+    .btn-primary {
+        font-size: small;
+        width: 70%;
+        height: 30px;
+        padding: 3px;
+    }
+    .list-container,
+    .btn {
+        margin: 1px;
+        padding: 2px
+    }
 }

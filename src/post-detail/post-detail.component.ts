@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CreatePostService } from 'src/create-post.service';
 import { MyPost } from '../myPost';
-import { trigger, transition, style, animate, query, stagger, animateChild } from '@angular/animations';
+import { trigger, transition, style, animate, query, stagger, animateChild, state } from '@angular/animations';
 
 @Component({
   selector: 'app-post-detail',
@@ -12,32 +12,27 @@ import { trigger, transition, style, animate, query, stagger, animateChild } fro
     trigger('items', [
       transition(':enter', [
         style({ transform: 'scale(0.1)', opacity: 0 }),
-        animate('0.7s cubic-bezier(.8, -0.6, 0.26, 1.6)',
-          style({ transform: 'scale(1)', opacity: 1 }))
-      ]),
-      transition(':leave', [
-        style({ transform: 'scale(1)', opacity: 1, height: '*' }),
-        animate('0.6s cubic-bezier(.8, -0.6, 0.2, 1.5)',
-          style({
-            transform: 'scale(0.5)', opacity: 0,
-            height: '0px', margin: '0px'
-          }))
-      ])
+        animate('1s 0.1s ease-out',
+          style({ transform: 'scale(1)', opacity: 1 }))     ]),
     ]),
+    // trigger('tag', [
+    //     transition(':enter', [
+    //       style({ transform: 'scale(0.1)', opacity: 0 }),
+    //       animate('1s 0.1s ease',
+    //         style({ transform: 'scale(1)', opacity: 1 }))
+    //     ]),
+    // ]),
     trigger('tag', [
-        transition(':enter', [
-          style({ transform: 'scale(0.1)', opacity: 0 }),
-          animate('1s 0.1s ease',
-            style({ transform: 'scale(1)', opacity: 1 }))
-        ]),
-        transition(':leave', [
-          style({ transform: 'scale(1)', opacity: 1, height: '*' }),
-          animate('0.6s cubic-bezier(.8, -0.6, 0.2, 1.5)',
-            style({
-              transform: 'scale(0.5)', opacity: 0,
-              height: '0px', margin: '0px'
-            }))
-        ])
+      state('initial', style({
+        backgroundColor: 'green',
+        transform: 'scale(1)'
+      })),
+      state('final', style({
+        backgroundColor: 'red',
+        transform: 'scale(1.5)'
+      })),
+      transition('final=>initial', animate('1000ms')),
+      transition('initial=>final', animate('1500ms'))
     ]),
   ]
 })

@@ -63,19 +63,6 @@ var PostTitleComponent = /** @class */ (function () {
                         }))
                     ])
                 ]),
-                animations_1.trigger('delBut', [
-                    animations_1.transition(':enter', [
-                        animations_1.style({ transform: 'scale(0.5)', opacity: 0 }),
-                        animations_1.animate('1s cubic-bezier(.8, -0.6, 0.26, 1.6)', animations_1.style({ transform: 'scale(1)', opacity: 1 })) // final
-                    ]),
-                    animations_1.transition(':leave', [
-                        animations_1.style({ transform: 'scale(1)', opacity: 1, height: '*' }),
-                        animations_1.animate('0.6s cubic-bezier(.8, -0.6, 0.2, 1.5)', animations_1.style({
-                            transform: 'scale(0.5)', opacity: 0,
-                            height: '0px', margin: '0px'
-                        }))
-                    ])
-                ]),
             ]
         })
     ], PostTitleComponent);

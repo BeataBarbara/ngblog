@@ -8,8 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.PostsListComponent = void 0;
 var core_1 = require("@angular/core");
+var myPost_1 = require("src/myPost");
 var PostsListComponent = /** @class */ (function () {
-    function PostsListComponent(createPostService) {
+    function PostsListComponent(formBuilder, createPostService) {
+        this.formBuilder = formBuilder;
         this.createPostService = createPostService;
         this.query = '';
         this.isHiddenBaseView = true;
@@ -18,7 +20,17 @@ var PostsListComponent = /** @class */ (function () {
         this.isHiddenSortTextLen = false;
     }
     PostsListComponent.prototype.ngOnInit = function () {
+        var _a;
         this.updatePosts();
+        this.createPost = this.formBuilder.group({
+            tags: this.formBuilder.group((_a = {},
+                _a[myPost_1.Tags.Hair] = false,
+                _a[myPost_1.Tags.Fry] = false,
+                _a[myPost_1.Tags.Soap] = false,
+                _a[myPost_1.Tags.Recomend] = false,
+                _a[myPost_1.Tags.Face] = false,
+                _a))
+        });
     };
     PostsListComponent.prototype.sortDate = function () {
         this.isHiddenBaseView = false;

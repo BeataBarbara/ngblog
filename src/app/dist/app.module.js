@@ -9,7 +9,6 @@ exports.__esModule = true;
 exports.AppModule = void 0;
 var button_1 = require("@angular/material/button");
 var dialog_1 = require("@angular/material/dialog");
-var snack_bar_1 = require("@angular/material/snack-bar");
 var common_1 = require("@angular/common");
 var http_1 = require("@angular/common/http");
 var core_1 = require("@angular/core");
@@ -30,11 +29,7 @@ var post_title_component_1 = require("../post-title/post-title.component");
 var ngx_pipes_1 = require("ngx-pipes");
 var animations_1 = require("@angular/platform-browser/animations");
 var confirm_component_1 = require("../confirm/confirm.component");
-var paginator_1 = require("@angular/material/paginator");
 var sort_1 = require("@angular/material/sort");
-var ngx_pagination_1 = require("ngx-pagination");
-;
-var icon_1 = require("@angular/material/icon");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -61,14 +56,10 @@ var AppModule = /** @class */ (function () {
                 ngx_pipes_1.NgPipesModule,
                 animations_1.BrowserAnimationsModule,
                 button_1.MatButtonModule,
-                snack_bar_1.MatSnackBarModule,
                 dialog_1.MatDialogModule,
-                paginator_1.MatPaginatorModule,
                 sort_1.MatSortModule,
-                ngx_pagination_1.NgxPaginationModule,
                 platform_browser_1.BrowserModule,
                 button_1.MatButtonModule,
-                icon_1.MatIconModule
             ],
             providers: [
                 create_post_service_1.CreatePostService
