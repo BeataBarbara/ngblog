@@ -7,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.PostDetailComponent = void 0;
-var core_1 = require("@angular/core");
 var animations_1 = require("@angular/animations");
+var core_1 = require("@angular/core");
 var PostDetailComponent = /** @class */ (function () {
     function PostDetailComponent(createPostService, activatedRoute) {
         this.createPostService = createPostService;
@@ -44,13 +44,6 @@ var PostDetailComponent = /** @class */ (function () {
                         animations_1.animate('1s 0.1s ease-out', animations_1.style({ transform: 'scale(1)', opacity: 1 }))
                     ]),
                 ]),
-                // trigger('tag', [
-                //     transition(':enter', [
-                //       style({ transform: 'scale(0.1)', opacity: 0 }),
-                //       animate('1s 0.1s ease',
-                //         style({ transform: 'scale(1)', opacity: 1 }))
-                //     ]),
-                // ]),
                 animations_1.trigger('tag', [
                     animations_1.state('initial', animations_1.style({
                         backgroundColor: 'green',

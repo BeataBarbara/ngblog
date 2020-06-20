@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CreatePostService } from '../create-post.service';
 import { Tags } from '../myPost';
-import { ActivatedRoute, Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-create-post',
@@ -39,6 +37,7 @@ export class CreatePostComponent implements OnInit {
 
   getTags(tags: Tags[]): Tags[] {
     const myTags = [];
+    // tslint:disable-next-line: prefer-const
     for (let key in tags) {
       if (tags[key]) {
         myTags.push(key);

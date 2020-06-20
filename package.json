@@ -24,7 +24,6 @@
         "@angular/platform-browser-dynamic": "~9.1.9",
         "@angular/router": "~9.1.9",
         "@ng-bootstrap/ng-bootstrap": "^6.1.0",
-        "@types/bootbox": "^5.2.1",
         "ac-modal": "^1.1.2",
         "angular-filter": "^0.5.17",
         "bootstrap": "^4.0.0-alpha.6",

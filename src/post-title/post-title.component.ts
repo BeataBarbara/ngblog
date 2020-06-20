@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CreatePostService } from 'src/create-post.service';
 import { MyPost } from '../myPost';
-import { trigger, transition, style, animate, query, stagger, animateChild } from '@angular/animations';
+import { trigger, transition, style, animate} from '@angular/animations';
 
 @Component({
   selector: 'app-post-title',

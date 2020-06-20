@@ -1,8 +1,8 @@
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CreatePostService } from 'src/create-post.service';
 import { MyPost } from '../myPost';
-import { trigger, transition, style, animate, query, stagger, animateChild, state } from '@angular/animations';
 
 @Component({
   selector: 'app-post-detail',
@@ -15,13 +15,6 @@ import { trigger, transition, style, animate, query, stagger, animateChild, stat
         animate('1s 0.1s ease-out',
           style({ transform: 'scale(1)', opacity: 1 }))     ]),
     ]),
-    // trigger('tag', [
-    //     transition(':enter', [
-    //       style({ transform: 'scale(0.1)', opacity: 0 }),
-    //       animate('1s 0.1s ease',
-    //         style({ transform: 'scale(1)', opacity: 1 }))
-    //     ]),
-    // ]),
     trigger('tag', [
       state('initial', style({
         backgroundColor: 'green',
