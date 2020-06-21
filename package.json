@@ -4,7 +4,7 @@
     "scripts": {
         "ng": "ng",
         "db": "json-server --watch database.json",
-        "start": "ng serve",
+        "start": "npm ci && ng serve",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
